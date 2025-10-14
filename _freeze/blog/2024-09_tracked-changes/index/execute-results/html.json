@@ -1,0 +1,15 @@
+{
+  "hash": "f2092191e8f6b2338862b31cbf3f913d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tracked changes for revisions\"\ndate: 2024-09-11\ndescription: \"A quick workflow on how to track changes during revisions\"\n#image: \"downloads/PNG/grp-summarize-02@4x.png\"\ncategories:\n  - revisions\n  - tracked changes\n  - publishing\n# citation: \n#   url: https://samanthacsik.github.io/posts/2024-03-31-data-viz-course/\ncitation: true\ndraft: false\n---\n\n\n\n\n\nDuring revisions, reviewers as us to make changes to your initially submitted manuscript. For reviewers to see what exactly you've changed in the manuscript, it is nice to have a version with tracked changes of your revised manuscript (kind of like the correction mode in Word). Luckily, there are tools available to make this very easy. I'll quickly describe my workflow below.\n\n![An example of an output with tracked changes using the Latex Diff Tool](images/example.png){width=\"70%\"}\n\n## Generating a manuscript with Papaja\n\nI tend to write manuscripts in RMarkdown, using the [Papaja package](https://frederikaust.com/papaja_man/). Render the `.Rmd` file to `.pdf` produces a `.tex` version. When first submitting the manuscript to a journal, I save the this `.tex` file and call it something like `initial_submission.tex`.\n\n## Making changes requested by reviewers\n\nAfter reviewers provided their feedback (fingers crossed it's positive and did not lead to a rejection), I make all sort of changes to the paper, i.e. the original `Rmd` file. Once I'm done, I'll render the file to `.pdf` again, in order to send back the revised manuscript. I'll call the `.tex` file that comes along with it `revised.tex`.\n\n## Tracking changes\n\nIn addition to my revised manuscript, I like to send reviewers a version where all the changes are immediately visible. To do so, I use the [online Latex Diff Tool](https://3142.nl/latex-diff/). All I need to do is copy-paste the content of my `initial_submission.tex` and my `revised.tex` file in the respective boxes. The tool then generates a version that highlights the changes. All I have to do is copy-paste that version into an empty `.tex` file and render it to `.pdf`. I always use [Overleaf](https://www.overleaf.com) for that.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

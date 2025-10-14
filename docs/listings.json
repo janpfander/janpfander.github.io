@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/blog/2024-11_learning-R/index.html",
+      "/blog/2024-09_tracked-changes/index.html",
+      "/blog/2024-06_meta-analysis/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching/index.html",
+    "items": [
+      "/teaching/research_design/index.html"
+    ]
+  }
+]

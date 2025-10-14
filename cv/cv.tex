@@ -1,0 +1,343 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithYear}[3][ ]{ % First argument is optional
+  \item\small{
+    #2 \hfill {\small #3} \\
+    #1
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Custom command for formatting publication subheadings
+\newcommand{\resumePublicationHeading}[1]{
+  \vspace{5pt} % Adjust space before the heading if needed
+  \noindent\textbf{\small #1} % Apply small font size and bold to the heading
+  \vspace{2pt} % Adjust space after the heading if needed
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \text{\Huge \scshape Jan Pfänder} \\ \vspace{1pt}
+    \textit{\scshape Postdoctoral researcher $\cdot$ Swiss Federal Institute of Aquatic Science and Technology} \\ \vspace{1pt}
+    \small 
+    \faEnvelope\ janlukas.pfaender -at- gmail.com $|$ 
+    \faHome\ \href{https://janpfander.github.io}{janpfander.github.io} 
+    %\faLinkedin\ \href{https://linkedin.com/in/...}{linkedin.com/in/jake} $|$ 
+\end{center}
+
+%-----------Positions-----------
+\section{Academic positions}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Swiss Federal Institute of Aquatic Science and Technology (Eawag)}{2025 -}
+      {Postdoctoral researcher}{Zurich, Switzerland}
+            \resumeItemListStart
+        \resumeItem{Advisor: Viktoria Cologna}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {École Normale Supérieure (ENS-PSL), Institut Jean Nicod}{2022 -- 2025}
+      {PhD Psychology}{Paris, France}
+            \resumeItemListStart
+        \resumeItem{Supervisors: Hugo Mercier \& Kevin Arceneaux}
+        \resumeItem{Thesis: Essays on Understanding Trust in Science}
+      \resumeItemListEnd
+    \resumeSubheading
+      {École Normale Supérieure (ENS-PSL)}{2020 -- 2022}
+      {MA Cognitive Science}{Paris, France}
+            \resumeItemListStart
+        \resumeItem{Supervisor: Hugo Mercier}            
+        \resumeItem{Thesis: Can we infer people are accurate and competent merely because they agree with each other?}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Universität Freiburg}{2019 -- 2020}
+      {MA Journalism, 1st year}{Freiburg, Germany} 
+    \resumeSubheading
+      {Universität Konstanz}{2014 -- 2018}
+      {BA Political Science and Public Administration}{Konstanz, Germany}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Direction Interministérielle de la Transformation Publique (DITP)}{June 2021 -- August 2021}
+      {Research Intern}{Paris, France}
+      
+    \resumeSubheading
+      {Assemblée Nationale}{September 2018 -- July 2019}
+      {Parliamentary Assistant}{Paris, France}
+
+    \resumeSubheading
+      {University of St. Gallen}{June 2017 -- July 2018}
+      {Research Assistant}{St. Gallen, Switzerland}
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+
+
+% Set font size for the entire Publications section
+\small
+
+\noindent\textcolor{gray}{\textit{\footnotemark[1]first author}}
+\vspace{5pt} % Adjust the space if needed
+
+% Use custom command for subheadings
+\resumePublicationHeading{Peer Reviewed Publications}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in]
+    \resumeItem{\textbf{Pfänder, J.\footnotemark[1]}, Kerzreho, L., & Mercier, H. (2025). Quasi-universal acceptance of basic science in the United States. \emph{Public Understanding of Science}. \url{https://doi.org/10.1177/09636625251364407}
+    }
+    \resumeItem{\textbf{Pfänder, J.\footnotemark[1]}, \& Altay, S. (2025). Spotting false news and doubting true news: A systematic review and meta-analysis of news judgements. \emph{Nature Human Behaviour}. \url{https://doi.org/10.1038/s41562-024-02086-1}
+    }
+    \resumeItem{\textbf{Pfänder, J.\footnotemark[1]}, de Courson, B., & Mercier, H. (2025). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? \emph{Cognition, 255, 106005}. \url{https://doi.org/10.1016/j.cognition.2024.106005}
+    }
+
+    % Add more published publications as needed
+\end{enumerate}
+
+\resumePublicationHeading{Conference Proceedings}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in, resume]
+    \resumeItem{\textbf{Pfänder, J.\footnotemark[1]}, de Courson, B., & Mercier, H. (2024). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? \emph{Proceedings of the Annual Meeting of the Cognitive Science Society, 46(0)}. \url{https://escholarship.org/uc/item/4ms2n8wd}
+    }
+
+\end{enumerate}
+
+\resumePublicationHeading{Large collaborations}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in, resume]
+    \resumeItem{Cologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E., Mihelj, S., Oreskes, N., Schäfer, M. S., & Linden, D. S. van der., ..., Mercier, H., ..., \textbf{Pfänder, J.}, ... et al. (2024). Trust in scientists and their role in society across 67 countries. \emph{Nature Human Behaviour}. \url{https://doi.org/10.1038/s41562-024-02090-5}
+    }
+    
+    \resumeItem{Mede, N. G., Cologna, V., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E., Mihelj, S., Oreskes, N., Schäfer, M. S., & Linden, D. S. van der., ..., Mercier, H., ..., \textbf{Pfänder, J.}, ... et al. (2024). Perceptions of Science, Science Communication, and Climate Change Attitudes in 67 Countries: The TISP Dataset. \emph{Scientific Data}. \url{https://doi.org/10.1038/s41597-024-04100-7} 
+    }
+
+\end{enumerate}
+
+\resumePublicationHeading{Working Papers}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in, resume]
+    \resumeItem{\textbf{Pfänder, J.\footnotemark[1]}, Rouilhan, S. D., & Mercier, H. (2025). Trusting but forgetting impressive science. \url{https://doi.org/10.31219/osf.io/argq5_v1} \emph{(Under review)}
+    }
+    \resumeItem{\textbf{Pfänder, J.\footnotemark[1]}, & Mercier, H. (2025). The French trust more the sciences they perceive as precise and consensual. \url{https://doi.org/10.31219/osf.io/k9m6e_v1} \emph{(Under review)}
+    }    
+
+\end{enumerate}
+
+
+%-----------Presentations-----------
+\section{Presentations}
+
+\resumePublicationHeading{Conferences}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in]
+    \resumeItemWithYear{\textbf{Belief in \& interventions against misinformation}}{2025}{\textit{15th Annual Conference of the European Political Science Association, Madrid}} 
+    \resumeItemWithYear{\textbf{The rational impression account of trust in science}}{2025}{\textit{Explaining culture: an interdisciplinary approach, Paris}} 
+    \resumeItemWithYear{\textbf{Spotting False News and Doubting True News. A Meta-Analysis of News Judgments  (Keynote)}}{2025}{\textit{Infox sur Seine, Paris}}    
+    \resumeItemWithYear{\textbf{How wise is the crowd -- Can we infer people are accurate and competent \\ merely because they agree with each other? (Poster)}}{2024}{\textit{46th Annual Meeting of the Cognitive Science Society, Rotterdam}}
+    \resumeItemWithYear{\textbf{Processus sous-tendant la confiance dans la science}}{2024}{\textit{5ème édition des Rencontres Jeunes Chercheur·euse·s, Grenoble}}
+    \resumeItemWithYear{\textbf{Spotting False News and Doubting True News: A Meta-Analysis of News Judgments}}{2024}{\textit{EDMO Scientific Conference on Disinformation, Amsterdam}}
+\end{enumerate}
+
+
+
+\resumePublicationHeading{Invited talks}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in, resume]
+    \resumeItemWithYear{\textbf{Trust in science}}{2025}{\textit{Paris School of International Affairs, Paris}
+\end{enumerate}
+
+%-----------Teaching-----------
+\section{Teaching}
+
+% Intermediate heading for Courses
+\subsection*{Courses}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Fact-Checking and Critical Thinking} $|$ \emph{Université PSL (Paris Sciences \& Lettres)}}{2022 -- Present}
+          \resumeItemListStart
+            \resumeItem{A hands-on introduction to research design for the interdisciplinary BA program \\ "Sciences pour un monde durable"}
+            \resumeItem{Sole instructor \& creator of the course}
+            \resumeItem{30h in-class per semester; one semester a year}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% Intermediate heading for Courses
+\subsection*{Workshops}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Meta-analysis for beginners}}{}
+          \resumeItemListStart
+          \resumeItemWithYear{Laboratoire de Psychologie du Développement et  de l'Éducation de l'Enfant (LaPsyDÉ)}{2024}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+% Intermediate heading for Courses
+\subsection*{Student internship supervision}
+% for subheadings, use:
+% \resumePublicationHeading{E.g. Master students}
+\begin{enumerate}[label={[{\arabic*.}]}, left=0.15in]
+    \resumeItemWithYear{Mateo Pivert, \textit{undergraduate}}{2024}
+    \resumeItemWithYear{Ludivine Million, \textit{undergraduate}}{2024}
+    \resumeItemWithYear{Prune Lefevre Jachimowicz, \textit{undergraduate}}{2024}
+    \resumeItemWithYear{Lou Kerzreho, \textit{graduate}}{2023}
+    \resumeItemWithYear{Kevin Chen, \textit{undergraduate}}{2023}
+    \resumeItemWithYear{Théodore Lellouche, \textit{undergraduate}}{2022}
+\end{enumerate}
+
+%-----------Other-----------
+\section{Professional Service}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Ad-hoc reviewer for}{}  
+  {\parbox[t]{0.9\textwidth}{Nature Climate Change (1), Public Understanding of Science (2), PNAS Nexus (1), Social Science \& Medicine (1), Društvena istraživanja (Croatian social science review) (1), Behavior Research Methods (1)}}{}
+
+\resumeSubHeadingListEnd
+
+\section{External Coursework \& Summer Schools}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Diverse Intelligences Summer Institute}{July 2024}
+      {Hosted by the University of St. Andrews and organized by Indiana University Bloomington
+}{St. Andrews, UK}
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: German, English, French, Spanish} \\
+     \textbf{Programming}{: R, Git (basics), Python (rudimentary)} \\
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

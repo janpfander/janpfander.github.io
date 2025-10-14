@@ -1,0 +1,21 @@
+---
+title: "Epistémologie et Esprit Critique (or, Introduction to research design)"
+description: |
+   A hands-on introduction to `research_design` for students of the Sciences Pour un Monde Durable (SMD) undergraduate program at Paris Sciences et Lettres (PSL) University
+categories: [research design, statistics, simulation, R, ggplot]
+image: hex_sticker.png
+draft: false
+---
+
+[![](hex_sticker.png){width=150px}](https://janpfander.github.io/course_research-design/){.btn target="_blank"} [{{< fa window-maximize >}} go to course website](https://janpfander.github.io/course_research-design/){.btn target=_blank}
+
+In science, but also in politics, in court, in airport-bestsellers, or at your lunch table, claims are made based on data and science. In this course, you will learn to think critically about data, and whether it actually supports the claim it is meant to. 
+
+This class is hands-on, meaning that you will learn how to design a study, organize a project, analyze data, present results and read scientific literature. To understand basic concepts in statistics, you will learn how to simulate data R. 
+
+The class is structured into four main blocks.
+
+    1. Data Analysis - You will develop the competences to understand and analyze data
+    2. Statistics - You will learn basic statistical concepts.
+    3. Causal Inference - You will get an understanding of how different research designs do or do not permit causal claims.
+    4. Science - You will get an idea of how science works, including how evidence accumulates and how scientific publishing works

@@ -1,0 +1,45 @@
+---
+title: "Learning Ressources"
+date: 2024-11-17
+description: "An overview of a couple of freely available online ressources to learn the basics of R and git"
+#image: "downloads/PNG/grp-summarize-02@4x.png"
+categories:
+  - R stats
+# citation: 
+#   url: https://samanthacsik.github.io/posts/2024-03-31-data-viz-course/
+citation: true
+draft: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+```
+
+There are plenty of free online resources to help learn R and git. Here is a quick collection of some that I came across.
+
+# Quick overviews
+
+- Andrew Heiss has [quick primer on R, RStudio and tidyverse](https://evalsp24.classes.andrewheiss.com/example/rstudio-tidyverse.html) 
+- Some useful [code-snipped recepies](https://posit.cloud/learn/recipes)
+- [R and RStudio cheat sheets](https://posit.co/resources/cheatsheets/)
+
+# Courses
+
+- Jenny Bryan has an [introductory course in R, visualization, and data analysis online](https://stat545.com/)
+- Mine Çetinkaya-Rundel has an [introductory course in R, visualization, and data science online](http://www2.stat.duke.edu/courses/Fall17/sta112.01/)
+- Alison Hill has an [introductory course for R and ggplot2](https://dmice.ohsu.edu/bedricks/courses/cs631/)
+- The psyTeachR team at the University of Glasgow School of Psychology and Neuroscience has (several courses on programming, data wrangling and analyses in R)[https://psyteachr.github.io/]
+- Jenny Bryan's ["Happy Git and GitHub for the useR"](https://happygitwithr.com/)
+- Software Carpentry has [a course on git](https://swcarpentry.github.io/git-novice/index.html)
+
+# Books
+
+- [R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 2nd Edition](https://r4ds.hadley.nz/)
+
+- [Crump, M. J. C., Navarro, D. J., & Suzuki, J. (2019, June 5). Answering Questions with Data (Textbook): Introductory Statistics for Psychology Students.](https://www.crumplab.com/statistics/)^[this book is mostly about statistics but uses R for examples]
+
+There is, of course, so much more out there. You can find [a curated (very long) list of R ressources here](https://github.com/iamericfletcher/awesome-r-learning-resources). Or [another, perhaps slightly more outdated one here](https://paulvanderlaken.com/2017/08/10/r-resources-cheatsheets-tutorials-books/)

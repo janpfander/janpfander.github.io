@@ -1,0 +1,25 @@
+---
+toc: false
+about: 
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  image: "images/profile.jpeg"
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/janpfander
+    - text: <i class="fa-brands fa-bluesky"></i> Bluesky
+      href: https://bsky.app/profile/janpfa.bsky.social
+    - icon: envelope
+      text: Email
+      href: "mailto:janlukas.pfaender@gmail.com"  
+---
+
+# Hi!
+
+I am Jan, a postdoc at the Swiss Federal Institute of Aquatic Science and Technology (Eawag) where I work with [Viktoria Cologna](https://scholar.google.com/citations?user=e138rTwAAAAJ&hl=en).
+
+My main research topics are trust in science and misinformation, with a new focus on climate science. More broadly, I'm interested in how people evaluate information, and what drives people to develop and propagate explanations about the world, including science, but also conspiracy theories, religion, or political ideology.
+
+I hold a [<i class="fas fa-book"></i> PhD](https://janpfander.github.io/phd_thesis/) in cognitive sciences from the École Normale Supérieure in Paris, where I was supervised by [Hugo Mercier](https://sites.google.com/site/hugomercier/).

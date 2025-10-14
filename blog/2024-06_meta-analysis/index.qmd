@@ -1,0 +1,725 @@
+---
+title: "Meta analysis for absolute beginners"
+date: 2024-06-25
+description: "A hands-on introduction to the tip of the pyramid of evidence"
+#image: "downloads/PNG/grp-summarize-02@4x.png"
+categories:
+  - meta-analysis
+  - stats
+  - systematic review
+# citation: 
+#   url: https://samanthacsik.github.io/posts/2024-03-31-data-viz-course/
+citation: true
+bibliography: references.bib
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+```
+
+This is a beginners' introduction to meta-analysis, simply because I myself am quite a beginner. So this is all I can do I'm afraid. My colleague Sacha Altay and I tried ourselves on our first ever meta-analysis very recently. Our main research question was whether people can tell true news from false news. Quite a hot topic these days, it seems.
+
+Throughout this post, I'll use our study as an example to illustrate crucial steps of a meta-analysis. These include (i) the systematic literature search, (ii) standardized effect sizes, and (iii) meta-analytic models.
+
+The idea is for this to be a hands-on introduction, so try to follow the instructions and perform parts of these steps yourself. I hope this will help you understood how a (very basic kind of) meta-analysis works, and give you some idea on how to perform one yourself.
+
+## Why care about meta-analysis ?
+
+You have most likely heard about the "Pyramid of evidence". There are different versions of the pyramid, but they have one thing in common: at the very top, there are meta-analyses.
+
+![A typical textbook Pyramid of Evidence](images/pyramid.png){width="70%"}
+
+The basic idea of meta-analysis is easy: the more data the better. Results of single studies can be affected by a ton of factors, e.g. the country they were run in, the experimental setup the researchers, the sample they recruit and so on. But if we average across many studies on the same thing, we get a more robust, generalizable result. And comparing many studies, we might even get an idea of specific factors that are systematically associated with differences.
+
+## I The research question
+
+Imagine our research question is: **"Can people tell true news from false News"**. And we know that there is psychological literature on that topic. These studies typically look like this:
+
+::::: columns
+::: {.column width="50%"}
+![Example of items used by @pennycookPracticalGuideDoing2021](images/example-item.jpg){width="100%"}
+:::
+
+::: {.column width="50%"}
+![](images/example-item2.jpg){width="100%"}
+:::
+:::::
+
+Participants see a bunch of news headlines, sometimes with a lede and source, as they would appear on social media typically. Some of these headlines are false (typically identified as such by fact-checking sites such as Snopes), and some of them are true. For each news headline, they are asked to which extent they believe the headline to be accurate, (e.g. "To the best of your knowledge, how accurate is the claim in the above headline" 1 = Not at all accurate, 4 = Very accurate).
+
+In order to do a meta-analysis, we need to have some quantifying measure for our research question. In this case, it is pretty straightforward. Researchers refer to people's capacity to tell true news from false news as news discernment, which is simply:
+
+$$
+\text{discernment} = \text{mean accuracy}_{\text{true news}} - \text{mean accuracy}_{\text{false news}}
+$$
+
+<!-- $$ -->
+
+<!-- \text{discernment} = \frac{1}{n_t} \sum_{i=1}^{n_t} \text{accuracy}_{\text{true news}, i} - \frac{1}{n_f} \sum_{i=1}^{n_f} \text{accuracy}_{\text{false news}, i} -->
+
+<!-- $$ -->
+
+We have a research question, and we also already have an idea of a quantifiable answer. At this point, we would ideally write up a pre-registration. This is basically a plan for our meta-analysis project, including the literature search and analysis plan, but a plan that we commit to making public.
+
+However, it is hard to write up a pre-registration for a meta-analysis if you don't know anything about a meta-analysis. So we'll skip this step for now and jump right into effect sizes.
+
+## II Effect sizes
+
+It might feel weird to talk about standardized effect sizes before the systematic literature search. But only if we know how to calculate (standardized) effect sizes, we can know what exactly we are looking for in articles.
+
+We want to be able to compare discernment across studies. The problem is: different studies use different measurement scales. For example, @diasEmphasizingPublishersDoes2020 use a 4-point scale, while @roozenbeekSusceptibilityMisinformationCOVID192020 use a 7-point scale. How can we compare the results of the two?
+
+```{r}
+#| label: meta-data
+#| echo: false
+#| message: false
+
+meta_full <- read_csv("data/meta.csv") %>% 
+  filter(condition == "control")
+
+meta <- meta_full %>% 
+  filter(ref %in% c("Dias_2020", "Roozenbeek_2020")) %>% 
+  group_by(ref) %>% 
+  # select only one observation
+  slice(1) 
+```
+
+```{r}
+#| label: meta-example-1
+#| echo: false
+#| message: false
+
+meta %>% 
+  select(ref, mean_accuracy_true, mean_accuracy_fake, accuracy_scale_numeric) %>% 
+  mutate(discernment = mean_accuracy_true - mean_accuracy_fake) %>% 
+  kable()
+```
+
+The solution are standardized effect sizes. Instead of expressing discernment on the original scale of the study, we express discernment in terms of standard deviations. All we have to do is divide the discernment score by the (pooled) standard deviation of true and false news. So on top of the mean ratings, we also need the standard deviations.
+
+```{r}
+#| label: meta-example-2
+#| echo: false
+#| message: false
+
+meta %>% 
+  select(ref, mean_accuracy_true, sd_accuracy_true, mean_accuracy_fake, sd_accuracy_fake, accuracy_scale_numeric) %>% 
+  mutate(discernment = mean_accuracy_true - mean_accuracy_fake) %>% 
+  kable() %>%
+  column_spec(c(3, 5), background = "lightblue")
+```
+
+The standardized discernment measure that we are after is generally referred to as a standardized mean difference (SMD), with perhaps the most popular version being called Cohen’s d, named after the psychologist and statistician [Jacob Cohen](https://en.wikipedia.org/wiki/Jacob_Cohen_(statistician)).
+
+Cohen's d is calculate as
+
+$$
+\text{Cohen's d} = \frac{\bar{x}_{\text{true}} - \bar{x}_{\text{false}}}{SD_{\text{pooled}}}
+$$ with
+
+$$
+SD_{\text{pooled}} = \sqrt{\frac{SD_{\text{true}}^2+SD_{\text{false}}^2}{2}}
+$$
+
+Using these formula, we can now calculate our standardized discernment measure.
+
+```{r}
+#| label: calculate-pooled-sd
+
+pooled_sd <- function(sd_true, sd_false) {
+  sd_pooled <- sqrt((sd_true^2 + sd_false^2) / 2)
+  return(sd_pooled)
+}
+
+meta <- meta %>% 
+  mutate(discernment = mean_accuracy_true - mean_accuracy_fake,
+         pooled_sd = pooled_sd(sd_accuracy_true, sd_accuracy_fake), 
+         discernment_std = discernment/pooled_sd)
+```
+
+```{r}
+#| label: meta-example-3
+#| echo: false
+#| message: false
+
+meta %>% 
+  select(ref, mean_accuracy_true, mean_accuracy_fake, sd_accuracy_fake, accuracy_scale_numeric, sd_accuracy_true, discernment, pooled_sd, discernment_std) %>% 
+  kable() %>%
+  column_spec(9, background = "lightblue")
+```
+
+Great! We are almost ready to go to the next step and talk about meta-analytic models. But before that, there's one thing missing still: the standard error (SE).
+
+::: callout-note
+Standard error (SE) and standard deviation (SD) are not the same thing. SD measures the variability observed within a sample. In our case, e.g. distribution accuracy ratings of fake news. It can be calculated directly from the data. SE describes the variability of a (hypothetical) distribution of an effect. In our case, e.g. a distribution of mean accuracy ratings of fake news, each based on a different sample. We can only guess this distribution based on the data by relying on statistical theory.
+:::
+
+The SE is like a measure of certainty. How certain can we be that we observe a certain discernment effect in a study not only because of sampling variation (e.g. the specific sample of participants we asked), but because there is actually a true effect in the population (in all people)? The bigger the sample, the smaller the SE, i.e. the more certain we can be that whatever we observe is actually representative of the population we want to make conclusions on.
+
+$$
+SE_{\text{Cohen's d}} = SD_{\text{pooled}}\sqrt{\frac{1}{n_\text{true}}+\frac{1}{n_\text{false}}}
+$$
+
+with $n_\text{false}$ being the sample size of fake news items, $n_\text{true}$ the sample size of true news items in group 1, and $SD_{\text{pooled}}$ the **pooled standard deviation** of both groups (see above).
+
+In our case, things are a bit tricky. Usually, in studies of news judgements, participants rate both false and true news items, and several of each category. First, this means that technically, we have to calculate the SE slightly differently. In the SE formula above, we were assuming independence of true and false news ratings. But the distributions of false and true news are necessarily correlated, because they are coming from the same participants. For this tutorial, we will ignore this. Second, our `n` are all instances of news ratings, i.e. is the product of the number of participants in our study (`n_subj`) and the number of news ratings per participant (`n_news`).
+
+```{r}
+#| label: meta-example-4
+#| echo: false
+#| message: false
+
+meta <-  meta %>% 
+  mutate(across(c(n_subj, n_news), ~round(.x, digits = 0))) %>% 
+  mutate(n = n_subj*n_news) 
+
+meta %>%
+  select(ref, n_subj, n_news, n) %>% 
+  kable()
+```
+
+With this information, we can now calculate the SE. In our case, `n` is the combined number of rating instances. Let's just assume that participant saw equally many false news as true news, so that we have $n_\text{true} = n_\text{false} = n/2$
+
+```{r}
+#| label: calculate-SE
+
+SE_Cohens_d <- function(sd_pooled, n_true, n_false) {
+  se_d <- sd_pooled * sqrt((1 / n_true) + (1 / n_false))
+  return(se_d)
+}
+
+meta <- meta %>% 
+  mutate(discernment_SE = SE_Cohens_d(sd_pooled = pooled_sd, n_true = n/2, n_false = n/2))
+```
+
+```{r}
+#| label: meta-example-5
+#| echo: false
+#| message: false
+
+meta %>% 
+  select(ref, pooled_sd, n, discernment_std, discernment_SE) %>% 
+  kable() %>%
+  column_spec(5, background = "lightblue")
+```
+
+Yay! Now that we have an effect size and its SE, we could run a meta-analysis.
+
+If this was a bit tedious, here's some good news: We do not have to do this by hand every time. There are several R packages specifically dedicated to meta-analysis that you can use. For example, the [`metafor`](https://www.metafor-project.org/doku.php/metafor) package has a function called [`escalc()`](https://wviechtb.github.io/metafor/reference/escalc.html#-outcome-measures-for-two-group-comparisons) to calculate various effect sizes that are commonly used in meta-analyses. Here is an example of how to do what we just did using escalc:
+
+```{r}
+#| label: use-escalc
+#| message: false
+
+library(metafor)
+
+# Calculate SMD and its variance
+meta_effect_sizes <- escalc(measure = "SMD", 
+                  # diff = true (m1i) - fake (m2i)
+                  m1i=mean_accuracy_true,
+                  sd1i=sd_accuracy_true, 
+                  m2i= mean_accuracy_fake, 
+                  sd2i=sd_accuracy_fake, 
+                  n1i = n_observations/2,
+                  n2i = n_observations/2, 
+                  data = meta)
+
+# View the resulting data frame with effect sizes and variances
+meta_effect_sizes %>% 
+  select(ref, starts_with("mean"), yi, vi) %>% 
+  mutate(SE = sqrt(vi)) %>% 
+  kable()
+```
+
+In this output, `yi`is the SDM (i.e. our standardized discernment effect), and `vi` is the variance (which is just $SE^2$). The values for `SE` are not exactly the same we obtained when calculating Cohen's D by hand before, because `escalc()` uses not Cohen's D, but Hedges' G (a very similar measure but with some small sample correction).
+
+There are many more standardized effect sizes. Which one you want to use depends mostly on the kind of data you want to analyze. For dichotomous outcomes, researchers typically use (log) odds or risk ratios, for associations between two continuous variables simply a correlation[^1] and so on. There is a great introduction to doing meta-analysis by @harrerDoingMetaAnalysisHandsOn2021. The [book is freely available online](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/) and includes r-code. There is a [whole chapter on effect sizes](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/effects.html#effects) which you might want to look at.
+
+[^1]: often researchers use a z-transformed version of a correlation coefficient
+
+We know have an idea of what we need to extract from the papers, in order to be able to run a meta-analysis:
+
+-   the means and standard deviations of false and true news ratings, respectively.
+-   the number of participants and the number of news ratings per participant
+
+With that in mind, we are ready to dive into the literature search.
+
+## III Systematic literature search
+
+Ideally, we want all studies that have ever been written on our research question. Remember, the more the better. There's just one issue: try to type something like "misinformation" or "fake news" in google scholar.
+
+![Screenshot from a google scholar search on June 27, 2024](images/scholar.png){width="70%"}
+
+Ups. Not enough time to review all these in a life time probably. The first thing we should do is be a bit more specific in what we're looking for. So let's refine our search string.
+
+### Search string
+
+You will most likely never start a systematic literature review having absolutely no clue about the topic you care about. There might at least be that one paper that inspired your idea for a meta-analysis. This paper gives you some first ideas of keywords that you could look for.
+
+In our case, we settled on this search string
+
+> '"false news" OR "fake news" OR "false stor\*" AND "accuracy" OR "discernment" OR "credibilit\*" OR "belief" OR "susceptib\*"'
+
+There are a couple of things here. We used 'OR's and 'AND's to combine words. These are Boolean operators. Quick quizz:
+
+:::: quiz
+<i class="fa fa-question-circle quiz-icon"></i>
+
+<div>
+
+Imagine we would have run a title-search (i.e. not searching abstracts or other content, but only the headlines of articles). Would this search string have yielded a study called "News accuracy ratings of US adults during 2016 presidential elections"?
+
+</div>
+::::
+
+::::: columns
+::: {.column width="50%"}
+![Boolean AND operator. Only if both keywords are included, a result will show up.](images/boolean_operator_AND.png){width="100%"}
+:::
+
+::: {.column width="50%"}
+![Boolean OR operator. As long as one of the keywords is included, a result will show up.](images/boolean_operator_OR.png){width="100%"}
+:::
+:::::
+
+No. And that is because of the boolean operators. The "OR" operator tells the search engine that as long as one of the keywords is matched, return the result. By contrast, the AND operator tells the search engine, that both keywords need to be matched. For example, "accuracy" **OR** "discernment" would return an article entitled "News accuracy ratings of US adults during 2016 presidential elections", whereas "accuracy" **AND** "discernment" would not.
+
+Instead of single keywords, you can also link combinations of keywords. Our search string, put a bit more abstractly, reads ...OR...OR...AND...Or...OR... As in math, there is a hierarchy among operators. On Scopus (the search engine we used), [OR operators are treated before AND operators](https://schema.elsevier.com/dtds/document/bkapi/search/SCOPUSSearchTips.htm). It's like in math, when you know that $1 + 2*4 = 9$, because you multiply before you add. You could re-write the math term $1 + (2*4) = 9$ to make the convention explicit, and you could do the same for the search string (...OR...OR...) AND (...Or...OR...), but you don't have to.
+
+Imagine that we are happy with the combination of keywords that we have in our search string. Where do we look for articles now?
+
+### Data bases
+
+You will all know Google Scholar, which is very convenient for quick searches. We all use it regularly to find a specific article that we are looking for, or to get a first impression of results from some keywords.
+
+The one big disadvantage for google scholar is that the [results (and least in terms of order) are user-specific](https://libguides.kcl.ac.uk/systematicreview/searchdb). You and I running the same search query on google scholar, results will not be listed in the same way. This is problematic, because literature of a systematic review should ideally be reproducible.
+
+Luckily, there are loads of other data bases that you can search. Some of them are issue specific (e.g. Pubmed for medicine in the broadest sense) while others are more general (e.g. Scopus, Web of Science).
+
+::: callout-note
+Most of these databases will miss non-published data. Researchers still have a hard time of publishing null findings, and very recent pre-prints have not yet made it through peer-review. Only searching peer-reviewed, published records might therefor bias your selection of studies. To counteract, you can additionally search on pre-print servers, e.g. [PsyArXiv](https://osf.io/preprints/psyarxiv) for psychology.
+:::
+
+In our case, say we want to search Scopus, a very large and general data base.
+
+![](images/scopus_1.png){width="100%"}
+
+We can enter our search term, and specify what parts of the articles we want to search for. We will pick Article title, Abstract & Keywords.
+
+Once we click on search, we see the number of overall search results, and a list of articles.
+
+![](images/scopus_2.png){width="100%"}
+
+The number of results is less shocking than the initial one from searching "misinformation" on Google Scholar. But it is still a whole lot of articles, and we couldn't possibly read all of them entirely.
+
+We can use some more refined criteria to filter out some likely irrelevant results[^2]. In the left hand panel, we can select for example the document type, language, or subject areas. We can exclude, for example, a couple of disciplines that are most likely not relevant, such as "Chemistry".
+
+[^2]: these are part of in-(or ex-)clusion criteria, but let's leave that for later
+
+::::: columns
+::: {.column width="50%"}
+![](images/scopus_3.png){width="50%"}
+:::
+
+::: {.column width="50%"}
+![](images/scopus_4.png){width="60%"}
+:::
+:::::
+
+The more restrictions we make, the more it will reduce the number of search results. You will also not that adding these restrictions changes the search string (you can see the full string by clicking on the orange "Advanced query" button).
+
+![](images/scopus_5.png){width="100%"}
+
+If we're finally happy with our search, we need to save the search results somewhere[^3]. Some people like to export all results to a reference manager such as Zotero. For our project, I preferred not to flood my Zotero and use the convenient options to export search results to a `.csv` file.
+
+[^3]: On scopus, you can additionally save your search history and results by making an account.
+
+::::: columns
+::: {.column width="50%"}
+![Boolean AND operator. Only if both keywords are included, a result will show up.](images/scopus_6.png){width="50%"}
+:::
+
+::: {.column width="50%"}
+![Boolean OR operator. As long as one of the keywords is included, a result will show up.](images/scopus_7.png){width="60%"}
+:::
+:::::
+
+:::: exercise
+<i class="fa fa-computer exercise-icon"></i>
+
+<div>
+
+Time to run your own literature search:
+
+1.  Find a partner
+2.  Make up a search string
+3.  Run it on Scopus
+4.  Restrict search results
+5.  Download a `.csv` file with the first 100 results
+
+</div>
+::::
+
+Now that we have all results stored, there are still many, many articles. Do we have to read them all? No. Before we start reading entire papers, we do screening.
+
+### Screening
+
+There are usually two stages of screening: (i) title screening and (ii) abstract screening. Since screening decisions can sometimes be quite arbitrary, we ideally want several researchers to do it independently.
+
+#### Title screening
+
+During title screening we throw out titles that are very obviously not relevant.
+
+:::: exercise
+<i class="fa fa-computer exercise-icon"></i>
+
+<div>
+
+Do your:
+
+1.  Stay with your partner
+2.  Upload your `.csv` search result file in a google spreadsheet
+3.  Limit your spreadsheet to the first 30 results.
+4.  Make a new tab and copy only the title column. Make a second column called "reviewer". Make a third column "decision". Duplicate this tab.
+5.  Each reviewer screens all titles independently. Put your respective initals in all cells of the "reviewer column". Agree on a code for in/exclusion in the "decision" column.
+6.  Compare with your partner and explain cases of exclusion
+
+</div>
+::::
+
+There will almost certainly be some cases where you and your co-reviewer will not agree.[^4].
+
+[^4]: There are ways to quantify the agreement between raters (e.g. [Cohen's kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa)), but we don't bother much about that here.
+
+One, conservative solution to proceed is to only remove titles that all reviewers found to be irrelevant, and make all others pass through to the next screening stage.
+
+#### Abstract screening
+
+The next stage, abstract screening, is a bit more challenging. At this point, the any search result that we retained might be relevant to review for us. That means, from now on, we really need to justify why we include some articles, but not others.
+
+Here are some criteria that we can set:
+
+```{r}
+#| label: inclusion-criteria
+#| echo: false
+#| message: false
+
+inclusion_criteria <- read_csv("inclusion_criteria.csv")
+
+kableExtra::kable(inclusion_criteria)
+```
+
+These inclusion[^5] criteria are very important. For every article that we reject after the title screening, we use them to justify why we excluded them.
+
+[^5]: or exclusion, depending on how you want to frame it
+
+::: callout-note
+The restrictions we made on our data base are technically also inclusion criteria. They are irrelevant for the screening, because they were already used to filter the results. But you need to report them.
+:::
+
+Inclusion criteria might be evolving during your screening process. Most likely, you weren't completely clear on everything you want or not, before launching the literature search. That's fine, as long as you are transparent about it (see section of pre-registration).
+
+:::: exercise
+<i class="fa fa-computer exercise-icon"></i>
+
+<div>
+
+[Here is a google spreadsheet with 10 of abstracts to screen](https://docs.google.com/spreadsheets/d/1slskn-AwoscEufYPslzdtWF-JHvtVuyIigIWPhpfsgc/edit?gid=230624631#gid=230624631). With you partner:
+
+1.  Download the `.csv` or make a copy in Google Spreadsheets
+2.  Read the abstracts.
+3.  For each abstract, give your inclusion decision. If you reject, justify.
+4.  Compare your decisions
+
+</div>
+::::
+
+### Full text assessment
+
+Now, finally, it is time to read full articles.
+
+:::: exercise
+<i class="fa fa-computer exercise-icon"></i>
+
+<div>
+
+Within your groups:
+
+1.  Pick one of these two articles each, i.e. one per person.
+
+-   Dias, N., Pennycook, G., & Rand, D. G. (2020). Emphasizing publishers does not effectively reduce susceptibility to misinformation on social media. Harvard Kennedy School Misinformation Review. https://doi.org/10.37016/mr-2020-001
+-   Roozenbeek, J., Schneider, C. R., Dryhurst, S., Kerr, J., Freeman, A. L. J., Recchia, G., van der Bles, A. M., & van der Linden, S. (2020). Susceptibility to misinformation about COVID-19 around the world. Royal Society Open Science, 7(10), 201199. https://doi.org/10.1098/rsos.201199
+
+2.  Access the articles via the usual means you find and download papers.
+3.  Think about whether you include them.
+4.  Extract the information you need.
+
+</div>
+::::
+
+### Pre-registration
+
+Ideally, you should already preregister after you are clear on your research question and effect sizes. There are [some good templates](https://docs.google.com/document/d/1fU-EY36gId9FWHsP4-lE2SF9IVCFBMKUzBJmHD9bBYQ/edit#heading=h.fwbi14d4b65g), e.g. on the Open Science Framework (OSF).
+
+### PRISMA
+
+What we just did follows pretty closely the [PRISMA guidelines](https://www.prisma-statement.org/). Once you are done with your systematic review, you should use their overview template to communicate your literature review and its different stages.
+
+## IV Meta-analysis
+
+Here's an intuitive way to think about a meta-analysis: We just take the effect sizes of all the studies and then calculate an some average. That average, we hope, is closer to the "true effect" than any of the single studies.
+
+The problem is: Some studies have a way larger sample than others. Our average should take this into account--in other words, what we want is a *weighted average*. The bigger the sample--and thus the smaller the standard error--the more weight a study should have.
+
+```{r}
+#| label: example-weighting
+#| include: false
+
+# check studies
+# meta_full %>% group_by(ref) %>% summarize(n = unique(n_subj)) %>% arrange(n)
+```
+
+### Fixed-effect vs. Random-effect model
+
+The way we calculate these weights is where things become a bit philosophical. There are two models to conceive of our study effect sizes: (i) a fixed effect model and (ii) a random effects model. The fixed-effect model assumes that there is one "true" effect only. Effect sizes vary from one study to another, but only becasue sampling variation. The random-effects model assumes that there are several "true" effects. Studies vary because of sampling variation, but also because they have different "true" effects.
+
+If this sounds confusing, you're not alone. I like to imagine it like this: Imagine you run the same study on news-discernment both in the US and in China. You get very different results. According to the fixed-effect model, these are two samples from the same population--all people--and there is one true value for news discernment capacity across the globe. According to the random-effects model, there these are two different populations, who have two distinct true values for news discernment capacity.
+
+If this still isn't clear (I wouldn't blame you), you can [give this chapter a read](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/pooling-es.html#pooling-es). The take away is that for many meta-analyses (at least in social sciences), a random-effects model is probably the better choice.
+
+> "\[...\] there may be countless reasons why real differences exist in the true effect sizes of studies. The random-effects model addresses this concern. It provides us with a model that often reflects the reality behind our data much better." [@harrerDoingMetaAnalysisHandsOn2021]
+
+### Weighted averages
+
+Remember that our meta-analysis ultimately leaves us with some sort of weighted average. We want studies with larger samples (and thus smaller SEs, or sampling variation) to have more weight.
+
+The most common approach to do this is often called inverse-variance weighting or simply inverse-variance meta-analysis [@harrerDoingMetaAnalysisHandsOn2021].
+
+$$
+w_k = \frac{1}{s^2_k}
+$$ where $w_k$ is the weight for each study $k$ and $s^2_k$ is the variance (the squared standard error) of each effect size.
+
+Based on these weights, the meta-analytic average is calculated as the sum of weighted effect sizes divided by the sum o fall individual weights
+
+$$
+\hat\theta = \frac{\sum^{K}_{k=1} \hat\theta_kw_k}{\sum^{K}_{k=1} w_k}
+$$
+
+with $\hat\theta$ estimate of the true pooled effect and $\hat\theta_k$ each study's effect size.
+
+For the random effects model, it's a little more difficult. It assumes that on top of the sampling variation, there is also other "random" variance $\tau^2$, or **tau-squared**.
+
+$$
+w^*_k = \frac{1}{s^2_k+\tau^2} 
+$$ Estimating $\tau^2$ [is possible but but complex](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/pooling-es.html#tau-estimators). Luckily, there are packages that do this for us. After determining the correct weight, random-effects models typically also use the same approach of inverse variance method as described above.
+
+Let's try an example of how to do a random-effects meta-analysis with the `metafor` package. Before we can run a meta-analysis, we need to make sure to have a data-frame with effect sizes.
+
+```{r}
+#| label: example-data-meta-analysis
+#| include: false
+
+meta <- meta_full %>% 
+  group_by(ref) %>% 
+  slice(1) %>% 
+  ungroup() %>% 
+  filter(paperID %in% c(1:10)) %>% 
+  arrange(paperID) %>% 
+  rename(n = n_observations) %>% 
+  select(paperID, ref, contains("mean"), contains("sd"), n)
+
+write_csv(meta, "data/meta_randomeffects_example.csv")
+```
+
+:::: exercise
+<i class="fa fa-computer exercise-icon"></i>
+
+<div>
+
+[Here is a spreadsheet](https://docs.google.com/spreadsheets/d/1slskn-AwoscEufYPslzdtWF-JHvtVuyIigIWPhpfsgc/edit?gid=697316395#gid=697316395).
+
+1.  Download it.
+
+2.  Calculate effect sizes using the `escalc()` function from the metafor package.
+
+</div>
+::::
+
+```{r}
+#| label: calculate-effect sizes
+#| message: false
+
+library(metafor)
+
+meta <- read_csv("data/meta_randomeffects_example.csv")
+
+# Calculate SMD and its variance
+meta_effect_sizes <- escalc(measure = "SMD", 
+                  # diff = true (m1i) - fake (m2i)
+                  m1i=mean_accuracy_true,
+                  sd1i=sd_accuracy_true, 
+                  m2i= mean_accuracy_fake, 
+                  sd2i=sd_accuracy_fake, 
+                  n1i = n/2,
+                  n2i = n/2, 
+                  data = meta) %>% 
+  arrange(yi)
+
+# View the resulting data frame 
+meta_effect_sizes %>% 
+  kable()
+```
+
+With the effect sizes, we can now run our meta-analysis.
+
+```{r}
+#| label: random-effects-metaanalysis
+
+result <- metafor::rma(yi, vi, data = meta_effect_sizes, slab = ref)
+metafor::forest(result)
+```
+
+Yay. This plot is called a "forest plot". We can see all effect sizes of the the studies that we fed into the model. In the right en column we see all standardizes discernment effect sizes and their confidence intervals. In the bottom row, we see the row label "RE Model", for random-effects model, the value for our meta-analytic average.
+
+### Multi-level
+
+So far so good. Things get more complicated if we have more than one effect size per study, and perhaps even per sample within a study. For our studies, this is the case.
+
+```{r}
+#| label: example-data-political-concordance
+#| include: false
+
+# select concordance studies
+meta <- meta_full %>% 
+  filter(news_family %in% c("politically_concordant", "politically_discordant")) %>% 
+  arrange(paperID) %>% 
+  rename(n = n_observations) %>% 
+  select(paperID, ref, sampleID, news_family, contains("mean"), contains("sd"), n)
+
+# Calculate SMD 
+meta_effect_sizes <- escalc(measure = "SMD", 
+                  # diff = true (m1i) - fake (m2i)
+                  m1i=mean_accuracy_true,
+                  sd1i=sd_accuracy_true, 
+                  m2i= mean_accuracy_fake, 
+                  sd2i=sd_accuracy_fake, 
+                  n1i = n/2,
+                  n2i = n/2, 
+                  data = meta) %>% 
+  arrange(yi) %>% 
+  select(-contains("mean"), -contains("sd"))
+
+write_csv(meta_effect_sizes, "data/example-data-political-concordance.csv")
+```
+
+One of the reasons is that participants did not only see several news items, but sometimes also news items of different categories, such as politically concordant (e.g. pro-republican news for a Republican participant) and discordant (e.g. pro-democrat news for a Republican participant).
+
+```{r}
+#| label: inspect-meta-political-concordance
+#| echo: false
+#| message: false
+
+meta <- read_csv("data/example-data-political-concordance.csv")
+
+meta %>% 
+  slice(1:20) %>% 
+  kable()
+```
+
+As a result, for each sample, we have two observations, i.e two lines in our data frame. Because observations are not independent of each other, and a standard meta-analysis assumes independence, we have to find a way of modelling this dependency. This is where multi-level meta-analysis becomes relevant.
+
+In fact, the standard random-effects model that we've learned about already is a multi-level model. It has two levels of variation: the sampling variance (the SE), and some unique study variance (what we labeled 'tau'). Now we want to add an additional level between these two, namely some unique sample variance.
+
+There is [a great chapter on multi-level models](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/multilevel-ma.html) in @harrerDoingMetaAnalysisHandsOn2021. The key take-away is that as soon as there are dependencies in our data frame, we need to model them. If effect sizes are correlated and we do not model the sources of that correlation, this can artificially reduce the heterogeniety of our effect sizes and lead to false-positive results [@harrerDoingMetaAnalysisHandsOn2021]. For example, if we run ten studies but 8 on them rely on the same 100 participants, we might find results that are very similar across studies, but that's precisely because they can hardly be seen as independent studies.
+
+Implementing a multilevel meta-analysis with the `metafor` package in R is pretty intuitive, if you have the habit of running linear mixed-models. The syntax is very similar.
+
+First, we crate add an `observation_id` to our data frame, which identifies each row, i.e. each effect size in our sample. We then create a `unique_sample_id`, which is a combination of the `ref` and the `sampleID` variable.
+
+```{r}
+#| label: prepare-data-for-multilevel
+#| message: false
+
+meta <- meta %>% 
+  mutate(observation_id = 1:nrow(.), 
+         unique_sample_id = paste0(ref, sampleID))
+
+head(meta) %>% 
+  kable() %>%
+  column_spec(c(8, 9), background = "lightblue")
+```
+
+We can then proceed and run our multi-level model.
+
+```{r}
+#| label: run-multilevel-model
+#| message: false
+#| 
+# Multilevel random effect model for accuracy
+multilevel_model <-  metafor::rma.mv(yi, vi, random = ~ 1 | unique_sample_id / observation_id, data=meta)
+```
+
+One additional thing, which I will not further discuss unfortunately, but which you should know about ([you can look here for more info](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/multilevel-ma.html#rve)): Multi-level models do not account for dependencies in sampling error. But when one same sample contributes several effect sizes, we should expect their respective sampling errors to be correlated [@harrerDoingMetaAnalysisHandsOn2021], too. To account for dependency in sampling errors, you should compute cluster-robust standard errors.
+
+```{r}
+#| label: cluster-robust-SE
+#| message: false
+#| 
+robust_multilevel_model <- metafor::robust(multilevel_model, cluster = unique_sample_id)
+```
+
+### Meta-regression
+
+In meta-analyses, we often want to go beyond mere averages. We also like to know what factors contribute to the differences we observe between effect sizes. Meta-regressions allow us to do exactly that.
+
+The good new is that this is pretty easy to implement and understand (at after having worked our brains to try to understand multi-level models). It works just like any normal regression analysis.
+
+Let's say we want to know differences in discernment associated with political concordance. All we have to do is add a term for that variable to our model.
+
+```{r}
+#| label: meta-regression-model
+#| message: false
+#| 
+# Multilevel random effect model for accuracy
+meta_regression_model <-  metafor::rma.mv(yi, vi, 
+                                          # you can also add multiple covariates
+                                          mods = ~news_family, 
+                                          random = ~ 1 | unique_sample_id / observation_id, 
+                                          data=meta)
+
+modelsummary::modelsummary(meta_regression_model, 
+                           stars = TRUE)
+```
+
+:::: quiz
+<i class="fa fa-question-circle quiz-icon"></i>
+
+<div>
+
+How do you interpret this regression table?
+
+</div>
+::::
+
+## Publication bias
+
+To be done.
+
+## Limits
+
+Do be done. But most importantly, don't compare apples and oranges in your meta-analysis ([see this Data colada post](http://datacolada.org/107#identifier_6_7175)).
+
+## Ressources
+
+I've already mentioned it many times throughout this post, but @harrerDoingMetaAnalysisHandsOn2021 is a really great open-access resource. You can [find the book online here](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/).
+
+-   Harrer, M., Cuijpers, P., Furukawa, T.A., & Ebert, D.D. (2021). Doing Meta-Analysis with R: A Hands-On Guide. Boca Raton, FL and London: Chapman & Hall/CRC Press. ISBN 978-0-367-61007-4.
+
+Another recommendation would be [this introductory chapter](https://lakens.github.io/statistical_inferences/) by Daniel Lakens.
+
+-   Lakens, D. (2022). Improving Your Statistical Inferences. Retrieved from https://lakens.github.io/statistical_inferences/. https://doi.org/10.5281/zenodo.6409077

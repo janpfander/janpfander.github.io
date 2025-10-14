@@ -1,0 +1,15 @@
+{
+  "hash": "b2a105c3f141e5c45697c93e3f708d29",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Teaching\"\nsubtitle: \"Open source course materials (with a lot of inspiration and help from other educators)\" \nlisting:\n  contents: . #current folder\n  feed: true\n  sort: \"date desc\"\n  type: grid\n  grid-item-border: true\n  grid-item-align: left\n  max-description-length: 175\n  date-format: medium\n  categories: numbered\n  sort-ui: false\n  filter-ui: false\npage-layout: full\ntitle-block-banner: true\n---\n\n::: {.cell}\n\n```{.r .cell-code}\ngetwd()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/jan/Desktop/website/teaching\"\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

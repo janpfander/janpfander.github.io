@@ -1,0 +1,16 @@
+/* css styles */
+
+.quiz, .exercise{
+  border: 2px solid #007acc;
+  border-radius: 5px;
+  background-color: #e6f3ff;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.quiz-icon, .exercise-icon {
+  font-size: 2em;
+  margin-right: 15px;
+  color: #007acc;
+}
+

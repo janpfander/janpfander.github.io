@@ -1,0 +1,15 @@
+{
+  "hash": "da3dd00823a778e4567da067d0bfa35e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Learning Ressources\"\ndate: 2024-11-17\ndescription: \"An overview of a couple of freely available online ressources to learn the basics of R and git\"\n#image: \"downloads/PNG/grp-summarize-02@4x.png\"\ncategories:\n  - R stats\n# citation: \n#   url: https://samanthacsik.github.io/posts/2024-03-31-data-viz-course/\ncitation: true\ndraft: false\n---\n\n\n\n\n\nThere are plenty of free online resources to help learn R and git. Here is a quick collection of some that I came across.\n\n# Quick overviews\n\n- Andrew Heiss has [quick primer on R, RStudio and tidyverse](https://evalsp24.classes.andrewheiss.com/example/rstudio-tidyverse.html) \n- Some useful [code-snipped recepies](https://posit.cloud/learn/recipes)\n- [R and RStudio cheat sheets](https://posit.co/resources/cheatsheets/)\n\n# Courses\n\n- Jenny Bryan has an [introductory course in R, visualization, and data analysis online](https://stat545.com/)\n- Mine Çetinkaya-Rundel has an [introductory course in R, visualization, and data science online](http://www2.stat.duke.edu/courses/Fall17/sta112.01/)\n- Alison Hill has an [introductory course for R and ggplot2](https://dmice.ohsu.edu/bedricks/courses/cs631/)\n- The psyTeachR team at the University of Glasgow School of Psychology and Neuroscience has (several courses on programming, data wrangling and analyses in R)[https://psyteachr.github.io/]\n- Jenny Bryan's [\"Happy Git and GitHub for the useR\"](https://happygitwithr.com/)\n- Software Carpentry has [a course on git](https://swcarpentry.github.io/git-novice/index.html)\n\n# Books\n\n- [R for Data Science: Import, Tidy, Transform, Visualize, and Model Data 2nd Edition](https://r4ds.hadley.nz/)\n\n- [Crump, M. J. C., Navarro, D. J., & Suzuki, J. (2019, June 5). Answering Questions with Data (Textbook): Introductory Statistics for Psychology Students.](https://www.crumplab.com/statistics/)^[this book is mostly about statistics but uses R for examples]\n\nThere is, of course, so much more out there. You can find [a curated (very long) list of R ressources here](https://github.com/iamericfletcher/awesome-r-learning-resources). Or [another, perhaps slightly more outdated one here](https://paulvanderlaken.com/2017/08/10/r-resources-cheatsheets-tutorials-books/)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
