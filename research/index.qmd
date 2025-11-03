@@ -30,7 +30,7 @@ citations-hover: false
 -   @pfanderTrustingForgettingImpressive2025 (*submitted*)
 -   @pfanderRationalImpressionAccount2025a (*submitted*)
 -   @pfanderStudyingTrustScience2025 (*submitted*)
--   @pfanderFrenchTrustMore2025
+-   @pfanderFrenchTrustMore2025 (*submitted*)
 
 ## Talks
 
