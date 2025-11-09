@@ -9,6 +9,8 @@ citations-hover: false
 
 ## Peer reviewed publications
 
+-   @pfanderTrustingForgettingImpressive2025a ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/osf/argq5_v2) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_impressive.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/impressive_science))
+
 -   @pfanderQuasiuniversalAcceptanceBasic2025b ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/osf/qc43v_v3) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_quasi_universal.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/everyone_trusts_science_abit))
 
 -   @pfanderSpottingFalseNews2025 ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/osf/n9h4y) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_spotting_false.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfa/meta_news_judgement))
@@ -27,7 +29,6 @@ citations-hover: false
 
 ## Working papers
 
--   @pfanderTrustingForgettingImpressive2025 (*submitted*)
 -   @pfanderRationalImpressionAccount2025a (*submitted*)
 -   @pfanderStudyingTrustScience2025 (*submitted*)
 -   @pfanderFrenchTrustMore2025 (*submitted*)
