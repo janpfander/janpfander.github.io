@@ -9,6 +9,8 @@ citations-hover: false
 
 ## Peer reviewed publications
 
+-   @pfanderGlobalStudiesTrust2026 ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/psyarxiv/jgcze_v2) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2026_new_directions.pdf))
+
 -   @pfanderTrustingForgettingImpressive2025a ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/osf/argq5_v2) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_impressive.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/impressive_science))
 
 -   @pfanderQuasiuniversalAcceptanceBasic2025b ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/osf/qc43v_v3) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_quasi_universal.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/everyone_trusts_science_abit))
