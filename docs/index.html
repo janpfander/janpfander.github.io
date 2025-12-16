@@ -34,6 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -113,15 +114,15 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/janpfander"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:github" style="font-size: 1.1em;" aria-label="Icon github from bi Iconify.design set." title="GitHub"></iconify-icon></span></a>
+<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:github" style="font-size: 1.1em;" aria-label="Icon github from bi Iconify.design set." title="GitHub"></iconify-icon> Github</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://bsky.app/profile/janpfa.bsky.social"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:bluesky" style="font-size: 1.1em;" aria-label="Icon bluesky from fa6-brands Iconify.design set." title="Bluesky"></iconify-icon></span></a>
+<span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:bluesky" style="font-size: 1.1em;" aria-label="Icon bluesky from fa6-brands Iconify.design set." title="Bluesky"></iconify-icon> Bluesky</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="mailto:janlukas.pfaender@gmail.com"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:envelope" style="font-size: 1.1em;" aria-label="Icon envelope from bi Iconify.design set." title="E-mail"></iconify-icon></span></a>
+<span class="menu-text"><iconify-icon role="img" inline="" icon="bi:envelope" style="font-size: 1.1em;" aria-label="Icon envelope from bi Iconify.design set." title="E-mail"></iconify-icon> Email</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -136,39 +137,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles column-page">
-  <div class="about-entity">
-    <img src="images/profile.jpeg" class="about-image
-  round " style="height: 15em; width: 15em;">
-<header id="title-block-header" class="quarto-title-block"></header>
-    <div class="about-links">
-  <a href="https://github.com/janpfander" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://bsky.app/profile/janpfa.bsky.social" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="fa-brands fa-bluesky"></i> Bluesky</span>
-  </a>
-  <a href="mailto:janlukas.pfaender@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<section id="hi" class="level1">
-<h1>Hi!</h1>
-<p>I am Jan, a postdoc at the Swiss Federal Institute of Aquatic Science and Technology (Eawag) where I work with <a href="https://scholar.google.com/citations?user=e138rTwAAAAJ&amp;hl=en">Viktoria Cologna</a>.</p>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="images/profile.jpeg" class="img-fluid" style="border-radius: 50%; width: 15em;"></p>
+</div><div class="column" style="width:70%;">
+<section id="hi" class="level2">
+<h2 class="anchored" data-anchor-id="hi">Hi!</h2>
+<p>I am Jan, a postdoc at the Swiss Federal Institute of Aquatic Science and Technology (Eawag), where I work with <a href="https://scholar.google.com/citations?user=e138rTwAAAAJ&amp;hl=en">Viktoria Cologna</a>.</p>
 <p>My main research topics are trust in science and misinformation, with a new focus on climate science. More broadly, I’m interested in how people evaluate information, and what drives people to develop and propagate explanations about the world, including science, but also conspiracy theories, religion, or political ideology.</p>
 <p>I hold a <a href="https://janpfander.github.io/phd_thesis/"><i class="fas fa-book"></i> PhD</a> in cognitive sciences from the École Normale Supérieure in Paris, where I was supervised by <a href="https://sites.google.com/site/hugomercier/">Hugo Mercier</a>.</p>
-
-
 </section>
-</main></div>
 </div>
- <!-- /main -->
+</div>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

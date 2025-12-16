@@ -1,5 +1,5 @@
 ---
-title: Research
+#title: Research
 csl: apa-cv.csl
 bibliography: references.bib
 suppress-bibliography: true
@@ -7,9 +7,18 @@ link-citations: false
 citations-hover: false
 ---
 
-## Peer reviewed publications
+# Working papers
+
+-   @pfanderRationalImpressionAccount2025a (*submitted*)
+-   @pfanderFrenchTrustMore2025 (*submitted*)
+
+# Peer reviewed publications
+
+## 2026
 
 -   @pfanderGlobalStudiesTrust2026 ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/psyarxiv/jgcze_v2) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2026_new_directions.pdf))
+
+## 2025
 
 -   @pfanderTrustingForgettingImpressive2025a ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/osf/argq5_v2) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_impressive.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/impressive_science))
 
@@ -19,25 +28,20 @@ citations-hover: false
 
 -   @pfanderHowWiseCrowd2025 ([<i class="fas fa-file-pdf"></i> preprint](pdfs/2025_cognition_preprint.pdf) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2025_how_wise.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/consensus_trust.git))
 
-## Large Collaborations
+## Large collaborations [minor roles]
 
 -   @colognaTrustScientistsTheir2025 ([<i class="fas fa-file-pdf"></i> preprint](https://doi.org/10.31219/osf.io/6ay7s))
 
 -   @medePerceptionsScienceScience2025 ([<i class="fas fa-file-pdf"></i> preprint](https://doi.org/10.31234/osf.io/jktsy))
 
-## Conference Proceedings
+## Conference proceedings
 
 -   @pfanderHowWiseCrowd2024([<i class="fas fa-file-pdf"></i> pdf](pdfs/2024_how_wise_cogsci.pdf) \| [<i class="fa-solid fa-person-chalkboard"></i>poster](talks/cogsci_2024.pdf) \| [<i class="fab fa-github"></i> code & data](https://github.com/janpfander/consensus_trust.git))
 
-## Working papers
 
--   @pfanderRationalImpressionAccount2025a (*submitted*)
--   @pfanderStudyingTrustScience2025 (*submitted*)
--   @pfanderFrenchTrustMore2025 (*submitted*)
+# Talks
 
-## Talks
-
-### 2025
+## 2025
 
 -   Pfänder, J., & Altay, S. (2025, June). *Belief in & interventions against misinformation*. 15th Annual Conference of the European Political Science Association, Madrid. ([<i class="fa-solid fa-person-chalkboard"></i>slides](https://janpfander.github.io/meta_misinformation_interventions/presentations/presentations.html))
 
@@ -47,7 +51,7 @@ citations-hover: false
 
 -   Pfänder, J., & Altay, S. (2025, March). *Spotting False News and Doubting True News. A Meta-Analysis of News Judgments*. Infox sur seine, Paris.
 
-### 2024
+## 2024
 
 -   Pfänder, J. (2024, July). *How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other?* 46th Annual Meeting of the Cognitive Science Society, Rotterdam.
 

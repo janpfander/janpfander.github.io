@@ -26,11 +26,11 @@ website:
         
     # your social media handles
     right:
-      - text: "{{< iconify bi github size=1.1em title='GitHub' >}}"
+      - text: "{{< iconify bi github size=1.1em title='GitHub' >}} Github"
         href: https://github.com/janpfander
-      - text: "{{< iconify fa6-brands bluesky size=1.1em title='Bluesky' >}}"
+      - text: "{{< iconify fa6-brands bluesky size=1.1em title='Bluesky' >}} Bluesky"
         href: https://bsky.app/profile/janpfa.bsky.social
-      - text: "{{< iconify bi envelope size=1.1em title='E-mail' >}}"
+      - text: "{{< iconify bi envelope size=1.1em title='E-mail' >}} Email"
         href: "mailto:janlukas.pfaender@gmail.com" 
         
   page-footer: 
@@ -49,6 +49,7 @@ format:
     css: styles.css
     toc: true
     page-layout: full
+    #mainfont: monospace
 
 editor: visual
 
