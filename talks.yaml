@@ -1,0 +1,96 @@
+# Single source for ALL talks — feeds both the CV (presentations section) and the
+# website (research page). Add a talk here once; run the CV build and/or the site
+# build and both update.
+#
+# Fields:
+#   title     (required)
+#   date      (required) — "YYYY" or "YYYY-MM"; month is used for the website citation
+#   venue     (required) — conference / institution
+#   location  (required) — city
+#   type      invited | conference
+#   authors   optional — defaults to "Pfänder, J."; use for co-authored talks
+#   kind      optional — e.g. "Keynote", "Poster" (shown in parentheses)
+#   slides / poster  optional — URL or path (path is relative to research/)
+
+
+- title: Trusting but forgetting impressive science
+  date: 2026-06
+  venue: EASP General Meeting
+  location: Strasbourg
+  type: conference
+  authors: Pfänder, J.
+
+- title: Strengthening Trust in Climate Scientists in the US - A Megastudy Approach
+  date: 2026-06
+  venue: EASP Small Meeting
+  location: Hohenheim
+  type: conference
+  authors: Pfänder, J.
+
+- title: Strengthening Trust in Climate Scientists in the US - A Megastudy Approach
+  date: 2026-05
+  venue: Max Planck Institute for Human Development
+  location: Berlin
+  type: invited
+  authors: Pfänder, J.
+
+- title: Predicting the effects of a megastudy with behavioral clones
+  date: 2026-05
+  venue: Behavioral Clones Workshop (Max Planck Institute for Human Development)
+  location: Berlin
+  type: conference
+  authors: Pfänder, J.
+
+- title: Trust in science
+  date: 2025-03
+  venue: Paris School of International Affairs (Sciences Po)
+  location: Paris
+  type: invited
+  authors: Pfänder, J., & Mercier, H.
+
+- title: Belief in & interventions against misinformation
+  date: 2025-06
+  venue: 15th Annual Conference of the European Political Science Association
+  location: Madrid
+  type: conference
+  authors: Pfänder, J., & Altay, S.
+  slides: https://janpfander.github.io/meta_misinformation_interventions/presentations/presentations.html
+
+- title: The rational impression account of trust in science
+  date: 2025-05
+  venue: "Explaining culture: an interdisciplinary approach"
+  location: Paris
+  type: conference
+  authors: Pfänder, J.
+
+- title: Spotting False News and Doubting True News. A Meta-Analysis of News Judgments
+  date: 2025-03
+  venue: Infox sur Seine
+  location: Paris
+  type: conference
+  kind: Keynote
+  authors: Pfänder, J., & Altay, S.
+
+- title: "How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other?"
+  date: 2024-07
+  venue: 46th Annual Meeting of the Cognitive Science Society
+  location: Rotterdam
+  type: conference
+  kind: Poster
+  authors: Pfänder, J.
+  poster: talks/cogsci_2024.pdf
+
+- title: Processus sous-tendant la confiance dans la science
+  date: 2024-06
+  venue: 5ème édition des Rencontres Jeunes Chercheur·euse·s
+  location: Grenoble
+  type: conference
+  authors: Pfänder, J.
+
+- title: "Spotting False News and Doubting True News: A Meta-Analysis of News Judgments"
+  date: 2024-02
+  venue: EDMO Scientific Conference on Disinformation
+  location: Amsterdam
+  type: conference
+  authors: Pfänder, J., & Altay, S.
+  slides: talks/amsterdam_2024.pdf

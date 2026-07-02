@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+
+// Brand palette — Mason's purple, shared with the CV (rgb(126, 86, 194)).
+$brand-purple:      #7e56c2;
+$brand-purple-dark: #5f3ba0;
+
+// Core Bootstrap hooks
+$primary:          $brand-purple;
+$link-color:       $brand-purple;
+$link-hover-color: $brand-purple-dark;
+
+// Top navigation / tab bar: neutral grey with dark text, purple on hover/active
+$navbar-bg:           #e9ecef;
+$navbar-fg:           #333333;
+$navbar-hover-color:  $brand-purple;
+$navbar-active-color: $brand-purple;
+
+/*-- scss:rules --*/
+
+// Footer links on-brand (footer background stays light)
+.nav-footer a,
+.nav-footer a:visited {
+  color: $brand-purple;
+}
+.nav-footer a:hover {
+  color: $brand-purple-dark;
+}

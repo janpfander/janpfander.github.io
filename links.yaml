@@ -1,0 +1,47 @@
+# Per-paper links shown on the website research page, keyed by citation key
+# (the @key from references.bib). Only the website uses these; the CV shows the DOI.
+# Recognised link fields (rendered in this order, each optional):
+#   preprint | published | pdf | code | poster | slides
+# Plus:
+#   note  — italic status text, e.g. "submitted" (for working papers)
+
+pfanderGlobalStudiesTrust2026:
+  preprint: https://osf.io/preprints/psyarxiv/jgcze_v2
+  published: pdfs/2026_new_directions.pdf
+
+pfanderTrustingForgettingImpressive2025a:
+  preprint: https://osf.io/preprints/osf/argq5_v2
+  published: pdfs/2025_impressive.pdf
+  code: https://github.com/janpfander/impressive_science
+
+pfanderQuasiuniversalAcceptanceBasic2025b:
+  preprint: https://osf.io/preprints/osf/qc43v_v3
+  published: pdfs/2025_quasi_universal.pdf
+  code: https://github.com/janpfander/everyone_trusts_science_abit
+
+pfanderSpottingFalseNews2025:
+  preprint: https://osf.io/preprints/osf/n9h4y
+  published: pdfs/2025_spotting_false.pdf
+  code: https://github.com/janpfa/meta_news_judgement
+
+pfanderHowWiseCrowd2025:
+  preprint: pdfs/2025_cognition_preprint.pdf
+  published: pdfs/2025_how_wise.pdf
+  code: https://github.com/janpfander/consensus_trust.git
+
+colognaTrustScientistsTheir2025:
+  preprint: https://doi.org/10.31219/osf.io/6ay7s
+
+medePerceptionsScienceScience2025:
+  preprint: https://doi.org/10.31234/osf.io/jktsy
+
+pfanderHowWiseCrowd2024:
+  pdf: pdfs/2024_how_wise_cogsci.pdf
+  poster: talks/cogsci_2024.pdf
+  code: https://github.com/janpfander/consensus_trust.git
+
+pfanderRationalImpressionAccount2025a:
+  note: submitted
+
+pfanderFrenchTrustMore2025:
+  note: submitted

@@ -13,3 +13,7 @@
 *.key
 
 **/*.quarto_ipynb
+
+# RenderCV build artifacts (cv/cv.pdf is the committed output)
+cv/_rendercv_output/
+**/__pycache__/

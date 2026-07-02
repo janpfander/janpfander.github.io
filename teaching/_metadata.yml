@@ -5,7 +5,8 @@
 freeze: true
 
 # Enable banner style title blocks
-title-block-banner: true
+title-block-banner: "#7e56c2"
+title-block-banner-color: white
 
 # no table of contents
 toc: false

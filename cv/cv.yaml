@@ -1,0 +1,347 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+#
+# Regenerated fields (do not hand-edit — run ./render.sh):
+#   - the `publications` section         <- references.bib
+#   - the "Peer Reviewing" entry's count <- reviews.yaml
+# Everything else is hand-maintained here. Section keys use lowercase +
+# underscores; RenderCV renders them Title-Cased (e.g. work_experience -> "Work
+# Experience"). Subheaders within a section are entries with only a `name`.
+cv:
+  name: Jan Pfänder
+  location: Zurich, Switzerland
+  email: janlukas.pfaender@gmail.com
+  website: https://janpfander.github.io
+  social_networks:
+  - network: GitHub
+    username: janpfander
+  - network: ORCID
+    username: 0009-0009-4389-2807
+  sections:
+    positions:
+    - company: Swiss Federal Institute of Aquatic Science and Technology (Eawag)
+      location: Zurich, Switzerland
+      highlights:
+      - "Advisor: Viktoria Cologna"
+      date: Sep 2025 – present
+      position: Postdoctoral researcher
+    - company: Cambridge University
+      location: Cambridge, UK
+      highlights:
+      - "Host: Sander van der Linden"
+      date: Mai 2026 – Jun 2026
+      position: Visiting Researcher
+    education:
+    - institution: École Normale Supérieure (ENS-PSL), Institut Jean Nicod
+      area: Psychology
+      degree: PhD
+      location: Paris, France
+      start_date: 2022
+      end_date: 2025
+      highlights:
+      - "Supervisors: Hugo Mercier & Kevin Arceneaux"
+      - "Thesis: Essays on Understanding Trust in Science"
+    - institution: École Normale Supérieure (ENS-PSL)
+      area: Cognitive Science
+      degree: MA
+      location: Paris, France
+      start_date: 2020
+      end_date: 2022
+      highlights:
+      - "Supervisor: Hugo Mercier"
+      - "Thesis: Can we infer people are accurate and competent merely because they agree with each other?"
+    - institution: Universität Freiburg
+      area: Journalism (1st year)
+      degree: MA
+      location: Freiburg, Germany
+      start_date: 2019
+      end_date: 2020
+    - institution: Universität Konstanz
+      area: Political Science and Public Administration
+      degree: BA
+      location: Konstanz, Germany
+      start_date: 2014
+      end_date: 2018
+    work_experience:
+    - company: Direction Interministérielle de la Transformation Publique (DITP)
+      location: Paris, France
+      date: Jun 2021 – Aug 2021
+      position: Research Intern
+    - company: Assemblée Nationale
+      location: Paris, France
+      date: Sep 2018 – Jul 2019
+      position: Parliamentary Assistant
+    - company: University of St. Gallen
+      location: St. Gallen, Switzerland
+      date: Jun 2017 – Jul 2018
+      position: Research Assistant
+    publications:
+    - title: Peer-reviewed publications
+      authors:
+      - (*n* = 5)
+    - title: Global studies on trust in science suggest new theoretical and methodological directions
+      authors:
+      - '**J. Pfänder**'
+      - N. G. Mede
+      - V. Cologna
+      journal: Current Opinion in Psychology
+      date: 2026
+      doi: https://doi.org/10.1016/j.copsyc.2025.102215
+    - title: Trusting but forgetting impressive science
+      authors:
+      - '**J. Pfänder**'
+      - S. de Rouilhan
+      - H. Mercier
+      journal: Journal of Cognition and Culture
+      date: 2025
+      doi: https://doi.org/10.1163/15685373-12340227
+    - title: Quasi-universal acceptance of basic science in the United States
+      authors:
+      - '**J. Pfänder**'
+      - L. Kerzreho
+      - H. Mercier
+      journal: Public Understanding of Science
+      date: 2025
+      doi: https://doi.org/10.1177/09636625251364407
+    - title: 'Spotting false news and doubting true news: a systematic review and meta-analysis of news judgements'
+      authors:
+      - '**J. Pfänder**'
+      - S. Altay
+      journal: Nature Human Behaviour
+      date: 2025
+      doi: https://doi.org/10.1038/s41562-024-02086-1
+    - title: 'How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other?'
+      authors:
+      - '**J. Pfänder**'
+      - B. de Courson
+      - H. Mercier
+      journal: Cognition
+      date: 2025
+      doi: https://doi.org/10.1016/j.cognition.2024.106005
+    - title: Conference proceedings
+      authors:
+      - (*n* = 1)
+    - title: 'How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other?'
+      authors:
+      - '**J. Pfänder**'
+      - B. de Courson
+      - H. Mercier
+      journal: Proceedings of the Annual Meeting of the Cognitive Science Society
+      date: 2024
+      url: https://escholarship.org/uc/item/4ms2n8wd
+    - title: Large collaborations (minor role)
+      authors:
+      - (*n* = 2)
+    - title: Trust in scientists and their role in society across 68 countries
+      authors:
+      - V. Cologna
+      - N. G. Mede
+      - S. Berger
+      - '...'
+      - '**J. Pfänder**'
+      - '... et al.'
+      journal: Nature Human Behaviour
+      date: 2025
+      doi: https://doi.org/10.1038/s41562-024-02090-5
+    - title: Perceptions of science, science communication, and climate change attitudes in 68 countries – the TISP dataset
+      authors:
+      - N. G. Mede
+      - V. Cologna
+      - S. Berger
+      - '...'
+      - '**J. Pfänder**'
+      - '... et al.'
+      journal: Scientific Data
+      date: 2025
+      doi: https://doi.org/10.1038/s41597-024-04100-7
+    - title: Working papers
+      authors:
+      - (*n* = 2)
+    - title: The rational impression account of trust in science
+      authors:
+      - '**J. Pfänder**'
+      - H. Mercier
+      date: 2025
+      doi: https://doi.org/10.31234/osf.io/nwka2_v1
+    - title: The French trust more the sciences they perceive as precise and consensual
+      authors:
+      - '**J. Pfänder**'
+      - H. Mercier
+      date: 2025
+      doi: https://doi.org/10.31219/osf.io/k9m6e_v1
+    presentations:
+    - name: Invited talks
+    - name: Strengthening Trust in Climate Scientists in the US - A Megastudy Approach
+      summary: Max Planck Institute for Human Development, Berlin
+      date: 2026
+    - name: Trust in science
+      summary: Paris School of International Affairs (Sciences Po), Paris
+      date: 2025
+    - name: Conference presentations
+    - name: Trusting but forgetting impressive science
+      summary: EASP General Meeting, Strasbourg
+      date: 2026
+    - name: Strengthening Trust in Climate Scientists in the US - A Megastudy Approach
+      summary: EASP Small Meeting, Hohenheim
+      date: 2026
+    - name: Predicting the effects of a megastudy with behavioral clones
+      summary: Behavioral Clones Workshop (Max Planck Institute for Human Development), Berlin
+      date: 2026
+    - name: Belief in & interventions against misinformation
+      summary: 15th Annual Conference of the European Political Science Association, Madrid
+      date: 2025
+    - name: The rational impression account of trust in science
+      summary: 'Explaining culture: an interdisciplinary approach, Paris'
+      date: 2025
+    - name: Spotting False News and Doubting True News. A Meta-Analysis of News Judgments (Keynote)
+      summary: Infox sur Seine, Paris
+      date: 2025
+    - name: 'How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? (Poster)'
+      summary: 46th Annual Meeting of the Cognitive Science Society, Rotterdam
+      date: 2024
+    - name: Processus sous-tendant la confiance dans la science
+      summary: 5ème édition des Rencontres Jeunes Chercheur·euse·s, Grenoble
+      date: 2024
+    - name: 'Spotting False News and Doubting True News: A Meta-Analysis of News Judgments'
+      summary: EDMO Scientific Conference on Disinformation, Amsterdam
+      date: 2024
+    teaching:
+    - name: Courses
+    - name: Fact-Checking and Critical Thinking
+      summary: Université PSL (Paris Sciences & Lettres) — BA program "Sciences pour un monde durable"
+      date: "2022 – 2025"
+      highlights:
+      - A hands-on introduction to research design for an interdisciplinary BA program
+      - Sole instructor & creator of the course
+      - 30h in-class per semester; one semester a year
+    - name: Workshops
+    - name: Meta-analysis for beginners
+      summary: Laboratoire de Psychologie du Développement et de l'Éducation de l'Enfant (LaPsyDÉ)
+      date: "2024"
+    advising:
+    - name: Graduate students
+      highlights:
+      - "Lou Kerzreho (2023)"
+    - name: Undergraduate students
+      highlights:
+      - "Mateo Pivert (2024)"
+      - "Ludivine Million (2024)"
+      - "Prune Lefevre Jachimowicz (2024)"
+      - "Kevin Chen (2023)"
+      - "Théodore Lellouche (2022)"
+    professional_service:
+    - name: Peer Reviewing
+      summary: (*n* = 10)
+      highlights:
+      - 'Journals: *Nature Climate Change* (1), *Public Understanding of Science* (3), *PNAS Nexus* (1), *Social Science & Medicine* (1), *Društvena istraživanja* (1), *Behavior Research Methods* (1), *Educational Research Review* (1), *Artificial Intelligence Review* (1)'
+    summer_schools:
+    - name: Diverse Intelligences Summer Institute
+      summary: Hosted by the University of St. Andrews, organized by Indiana University Bloomington
+      location: St. Andrews, UK
+      date: "2024"
+    skills:
+    - label: Languages
+      details: German, English, French, Spanish
+    - label: Programming
+      details: R, Git (basics), Python (rudimentary)
+
+design:
+  theme: classic
+  templates:
+    single_date: YEAR
+    top_note: '*LAST_UPDATED MONTH_NAME YEAR*'
+    experience_entry:
+      main_column: |-
+        **COMPANY**
+
+        POSITION
+
+        SUMMARY
+
+        HIGHLIGHTS
+  page:
+    size: us-letter
+    top_margin: 0.6in
+    bottom_margin: 0.6in
+    left_margin: 0.6in
+    right_margin: 0.6in
+    show_footer: true
+    show_top_note: true
+  colors:
+    body: rgb(0, 0, 0)
+    name: rgb(126, 86, 194)
+    headline: rgb(126, 86, 194)
+    connections: rgb(0, 0, 0)
+    section_titles: rgb(126, 86, 194)
+    links: rgb(126, 86, 194)
+    footer: rgb(126, 86, 194)
+    top_note: rgb(126, 86, 194)
+  typography:
+    line_spacing: 0.6em
+    alignment: justified
+    date_and_location_column_alignment: right
+    font_family:
+      body: JetBrains Mono
+      name: JetBrains Mono
+      headline: JetBrains Mono
+      connections: JetBrains Mono
+      section_titles: JetBrains Mono
+    font_size:
+      body: 8pt
+      name: 20pt
+      headline: 8pt
+      connections: 8pt
+      section_titles: 1.4em
+    small_caps:
+      name: false
+      headline: false
+      connections: false
+      section_titles: false
+    bold:
+      name: true
+      headline: false
+      connections: false
+      section_titles: true
+  links:
+    underline: false
+    show_external_link_icon: true
+  header:
+    alignment: center
+    photo_width: 3.5cm
+    photo_position: left
+    photo_space_left: 0.4cm
+    photo_space_right: 0.4cm
+    space_below_name: 0.7cm
+    space_below_headline: 0.7cm
+    space_below_connections: 0.7cm
+    connections:
+      phone_number_format: national
+      hyperlink: true
+      show_icons: true
+      display_urls_instead_of_usernames: false
+      separator: ''
+      space_between_connections: 0.5cm
+  section_titles:
+    type: with_partial_line
+    line_thickness: 0.5pt
+    space_above: 0.5cm
+    space_below: 0.3cm
+  sections:
+    allow_page_break: true
+    space_between_regular_entries: 1.2em
+    space_between_text_based_entries: 0.3em
+  entries:
+    date_and_location_width: 4.15cm
+    side_space: 0.2cm
+    space_between_columns: 0.1cm
+    allow_page_break: true
+    short_second_row: false
+    summary:
+      space_above: 0cm
+      space_left: 0cm
+    highlights:
+      bullet: •
+      nested_bullet: •
+      space_left: 0.15cm
+      space_above: 0cm
+      space_between_items: 0cm
+      space_between_bullet_and_text: 0.5em

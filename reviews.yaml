@@ -1,0 +1,18 @@
+# Peer-review record — single source for the CV's "Peer Reviewing" entry.
+# The total (n) is computed automatically by wrangler.py; just add a line per venue.
+- venue: Nature Climate Change
+  count: 1
+- venue: Public Understanding of Science
+  count: 3
+- venue: PNAS Nexus
+  count: 1
+- venue: Social Science & Medicine
+  count: 1
+- venue: Društvena istraživanja
+  count: 1
+- venue: Behavior Research Methods
+  count: 1
+- venue: Educational Research Review
+  count: 1
+- venue: Artificial Intelligence Review
+  count: 1
