@@ -175,6 +175,10 @@ def load_entries():
         key = entry.get("ID", "")
         if key and key in seen:
             continue
+        # Theses live in Zotero alongside the papers but belong in the CV's
+        # Education section, not under publications/working papers.
+        if entry.get("ENTRYTYPE", "").lower() in ("phdthesis", "mastersthesis", "thesis"):
+            continue
         seen.add(key)
         entry["_order"] = i
         entries.append(entry)

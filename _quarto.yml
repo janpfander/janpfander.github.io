@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!CLAUDE.md"
+    - "!README.md"
 
 freeze: auto
 

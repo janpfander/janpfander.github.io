@@ -1,17 +1,108 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Learning Ressources\n\n\n\nR stats\n\n\n\nAn overview of a couple of freely available online ressources to learn the basics of R and git\n\n\n\n\n\nNov 17, 2024\n\n\nJan Pfänder\n\n\n\n\n\n\n\n\n\n\n\n\nTracked changes for revisions\n\n\n\nrevisions\n\ntracked changes\n\npublishing\n\n\n\nA quick workflow on how to track changes during revisions\n\n\n\n\n\nSep 11, 2024\n\n\nJan Pfänder\n\n\n\n\n\n\n\n\n\n\n\n\nMeta analysis for absolute beginners\n\n\n\nmeta-analysis\n\nstats\n\nsystematic review\n\n\n\nA hands-on introduction to the tip of the pyramid of evidence\n\n\n\n\n\nJun 25, 2024\n\n\nJan Pfänder\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "teaching/research_design/index.html",
     "href": "teaching/research_design/index.html",
     "title": "Epistémologie et Esprit Critique (or, Introduction to research design)",
     "section": "",
     "text": "go to course website\nIn science, but also in politics, in court, in airport-bestsellers, or at your lunch table, claims are made based on data and science. In this course, you will learn to think critically about data, and whether it actually supports the claim it is meant to.\nThis class is hands-on, meaning that you will learn how to design a study, organize a project, analyze data, present results and read scientific literature. To understand basic concepts in statistics, you will learn how to simulate data R.\nThe class is structured into four main blocks.\n1. Data Analysis - You will develop the competences to understand and analyze data\n2. Statistics - You will learn basic statistical concepts.\n3. Causal Inference - You will get an understanding of how different research designs do or do not permit causal claims.\n4. Science - You will get an idea of how science works, including how evidence accumulates and how scientific publishing works"
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Working papers",
+    "section": "",
+    "text": "Pfänder, J., & Mercier, H. (2026). Sciences perceived as precise and consensual are more trusted. Open Science Framework. https://doi.org/10.31219/osf.io/k9m6e_v2 (submitted)\nPfänder, J., & Mercier, H. (2025). The rational impression account of trust in science. https://doi.org/10.31234/osf.io/nwka2_v1 (submitted)"
+  },
+  {
+    "objectID": "research/index.html#section",
+    "href": "research/index.html#section",
+    "title": "Working papers",
+    "section": "2026",
+    "text": "2026\n\nPfänder, J., Mede, N. G., & Cologna, V. (2026). Global studies on trust in science suggest new theoretical and methodological directions. Current Opinion in Psychology, 67, 102215. https://doi.org/10.1016/j.copsyc.2025.102215 ( preprint |  published version)"
+  },
+  {
+    "objectID": "research/index.html#section-1",
+    "href": "research/index.html#section-1",
+    "title": "Working papers",
+    "section": "2025",
+    "text": "2025\n\nPfänder, J., De Courson, B., & Mercier, H. (2025). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? Cognition, 255, 106005. https://doi.org/10.1016/j.cognition.2024.106005 ( preprint |  published version |  code & data)\nPfänder, J., Kerzreho, L., & Mercier, H. (2025). Quasi-universal acceptance of basic science in the United States. Public Understanding of Science, 09636625251364407. https://doi.org/10.1177/09636625251364407 ( preprint |  published version |  code & data)\nPfänder, J., & Altay, S. (2025). Spotting false news and doubting true news: A systematic review and meta-analysis of news judgements. Nature Human Behaviour, 1–12. https://doi.org/10.1038/s41562-024-02086-1 ( preprint |  published version |  code & data)\nPfänder, J., Rouilhan, S. de, & Mercier, H. (2025). Trusting But Forgetting Impressive Science. Journal of Cognition and Culture, 26(1-2), 103–146. https://doi.org/10.1163/15685373-12340227 ( preprint |  published version |  code & data)"
+  },
+  {
+    "objectID": "research/index.html#large-collaborations-minor-roles",
+    "href": "research/index.html#large-collaborations-minor-roles",
+    "title": "Working papers",
+    "section": "Large collaborations [minor roles]",
+    "text": "Large collaborations [minor roles]\n\nAczel, B., Szaszi, B., Clelland, H. T., Kovacs, M., Holzmeister, F., van Ravenzwaaij, D., Schulz-Kümpel, H., Hoffmann, S., Nilsonne, G., Kosa, L., Torma, Z. A., Abdelfatah, Y., Aberson, C. L., Acar, O. A., Acem, E., Adamkovic, M., Adamovich, T., Adiasto, K., Ahnström, L., … Nosek, B. A. (2026). Investigating the analytical robustness of the social and behavioural sciences. Nature, 652(8108), 135–142. https://doi.org/10.1038/s41586-025-09844-9\nCologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., van der Linden, S., Abdul Aziz, N. I., Abdulsalam, S., Shamsi, N. A., Aczel, B., Adinugroho, I., Alabrese, E., Aldoh, A., Alfano, M., … Zwaan, R. A. (2025). Trust in scientists and their role in society across 68 countries. Nature Human Behaviour, 1–18. https://doi.org/10.1038/s41562-024-02090-5 ( preprint)\nMede, N. G., Cologna, V., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., Van Der Linden, S., Abdul Aziz, N. I., Abdulsalam, S., Shamsi, N. A., Aczel, B., Adinugroho, I., Alabrese, E., Aldoh, A., Alfano, M., … Zwaan, R. A. (2025). Perceptions of science, science communication, and climate change attitudes in 68 countries – the TISP dataset. Scientific Data, 12(1), 114. https://doi.org/10.1038/s41597-024-04100-7 ( preprint)"
+  },
+  {
+    "objectID": "research/index.html#conference-proceedings",
+    "href": "research/index.html#conference-proceedings",
+    "title": "Working papers",
+    "section": "Conference proceedings",
+    "text": "Conference proceedings\n\nPfänder, J., de Courson, B., & Mercier, H. (2024). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? Proceedings of the Annual Meeting of the Cognitive Science Society, 46(0). ( pdf |  code & data |  poster)"
+  },
+  {
+    "objectID": "research/index.html#section-2",
+    "href": "research/index.html#section-2",
+    "title": "Working papers",
+    "section": "2026",
+    "text": "2026\n\nPfänder, J. (2026, June). Trusting but forgetting impressive science. EASP General Meeting, Strasbourg.\nPfänder, J. (2026, June). Strengthening Trust in Climate Scientists in the US - A Megastudy Approach. EASP Small Meeting, Hohenheim.\nPfänder, J. (2026, May). Strengthening Trust in Climate Scientists in the US - A Megastudy Approach. Max Planck Institute for Human Development, Berlin.\nPfänder, J. (2026, May). Predicting the effects of a megastudy with behavioral clones. Behavioral Clones Workshop (Max Planck Institute for Human Development), Berlin."
+  },
+  {
+    "objectID": "research/index.html#section-3",
+    "href": "research/index.html#section-3",
+    "title": "Working papers",
+    "section": "2025",
+    "text": "2025\n\nPfänder, J., & Altay, S. (2025, June). Belief in & interventions against misinformation. 15th Annual Conference of the European Political Science Association, Madrid. ( slides)\nPfänder, J. (2025, May). The rational impression account of trust in science. Explaining culture: an interdisciplinary approach, Paris.\nPfänder, J., & Mercier, H. (2025, March). Trust in science. Paris School of International Affairs (Sciences Po), Paris.\nPfänder, J., & Altay, S. (2025, March). Spotting False News and Doubting True News. A Meta-Analysis of News Judgments (Keynote). Infox sur Seine, Paris."
+  },
+  {
+    "objectID": "research/index.html#section-4",
+    "href": "research/index.html#section-4",
+    "title": "Working papers",
+    "section": "2024",
+    "text": "2024\n\nPfänder, J. (2024, July). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? (Poster). 46th Annual Meeting of the Cognitive Science Society, Rotterdam. ( poster)\nPfänder, J. (2024, June). Processus sous-tendant la confiance dans la science. 5ème édition des Rencontres Jeunes Chercheur·euse·s, Grenoble.\nPfänder, J., & Altay, S. (2024, February). Spotting False News and Doubting True News: A Meta-Analysis of News Judgments. EDMO Scientific Conference on Disinformation, Amsterdam. ( slides)"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Jan Pfänder",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "blog/2024-09_tracked-changes/index.html",
+    "href": "blog/2024-09_tracked-changes/index.html",
+    "title": "Tracked changes for revisions",
+    "section": "",
+    "text": "During revisions, reviewers as us to make changes to your initially submitted manuscript. For reviewers to see what exactly you’ve changed in the manuscript, it is nice to have a version with tracked changes of your revised manuscript (kind of like the correction mode in Word). Luckily, there are tools available to make this very easy. I’ll quickly describe my workflow below."
+  },
+  {
+    "objectID": "blog/2024-09_tracked-changes/index.html#generating-a-manuscript-with-papaja",
+    "href": "blog/2024-09_tracked-changes/index.html#generating-a-manuscript-with-papaja",
+    "title": "Tracked changes for revisions",
+    "section": "Generating a manuscript with Papaja",
+    "text": "Generating a manuscript with Papaja\nI tend to write manuscripts in RMarkdown, using the Papaja package. Render the .Rmd file to .pdf produces a .tex version. When first submitting the manuscript to a journal, I save the this .tex file and call it something like initial_submission.tex."
+  },
+  {
+    "objectID": "blog/2024-09_tracked-changes/index.html#making-changes-requested-by-reviewers",
+    "href": "blog/2024-09_tracked-changes/index.html#making-changes-requested-by-reviewers",
+    "title": "Tracked changes for revisions",
+    "section": "Making changes requested by reviewers",
+    "text": "Making changes requested by reviewers\nAfter reviewers provided their feedback (fingers crossed it’s positive and did not lead to a rejection), I make all sort of changes to the paper, i.e. the original Rmd file. Once I’m done, I’ll render the file to .pdf again, in order to send back the revised manuscript. I’ll call the .tex file that comes along with it revised.tex."
+  },
+  {
+    "objectID": "blog/2024-09_tracked-changes/index.html#tracking-changes",
+    "href": "blog/2024-09_tracked-changes/index.html#tracking-changes",
+    "title": "Tracked changes for revisions",
+    "section": "Tracking changes",
+    "text": "Tracking changes\nIn addition to my revised manuscript, I like to send reviewers a version where all the changes are immediately visible. To do so, I use the online Latex Diff Tool. All I need to do is copy-paste the content of my initial_submission.tex and my revised.tex file in the respective boxes. The tool then generates a version that highlights the changes. All I have to do is copy-paste that version into an empty .tex file and render it to .pdf. I always use Overleaf for that."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Learning Ressources\n\n\n\nR stats\n\n\n\nAn overview of a couple of freely available online ressources to learn the basics of R and git\n\n\n\n\n\nNov 17, 2024\n\n\nJan Pfänder\n\n\n\n\n\n\n\n\n\n\n\n\nTracked changes for revisions\n\n\n\nrevisions\n\ntracked changes\n\npublishing\n\n\n\nA quick workflow on how to track changes during revisions\n\n\n\n\n\nSep 11, 2024\n\n\nJan Pfänder\n\n\n\n\n\n\n\n\n\n\n\n\nMeta analysis for absolute beginners\n\n\n\nmeta-analysis\n\nstats\n\nsystematic review\n\n\n\nA hands-on introduction to the tip of the pyramid of evidence\n\n\n\n\n\nJun 25, 2024\n\n\nJan Pfänder\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/2024-06_meta-analysis/index.html",
@@ -98,62 +189,6 @@
     "text": "Footnotes\n\n\nthis book is mostly about statistics but uses R for examples↩︎"
   },
   {
-    "objectID": "research/index.html",
-    "href": "research/index.html",
-    "title": "Working papers",
-    "section": "",
-    "text": "Pfänder, J., & Mercier, H. (2025). The rational impression account of trust in science. https://doi.org/10.31234/osf.io/nwka2_v1 (submitted)\nPfänder, J., & Mercier, H. (2025). The french trust more the sciences they perceive as precise and consensual. https://doi.org/10.31219/osf.io/k9m6e_v1 (submitted)"
-  },
-  {
-    "objectID": "research/index.html#section",
-    "href": "research/index.html#section",
-    "title": "Working papers",
-    "section": "2026",
-    "text": "2026\n\nPfänder, J., Mede, N. G., & Cologna, V. (2026). Global studies on trust in science suggest new theoretical and methodological directions. Current Opinion in Psychology, 67, 102215. https://doi.org/10.1016/j.copsyc.2025.102215 ( preprint |  published version)"
-  },
-  {
-    "objectID": "research/index.html#section-1",
-    "href": "research/index.html#section-1",
-    "title": "Working papers",
-    "section": "2025",
-    "text": "2025\n\nPfänder, J., Rouilhan, S. de, & Mercier, H. (2025). Trusting but forgetting impressive science. Journal of Cognition and Culture, 1–44. https://doi.org/10.1163/15685373-12340227 ( preprint |  published version |  code & data)\nPfänder, J., Kerzreho, L., & Mercier, H. (2025). Quasi-universal acceptance of basic science in the United States. Public Understanding of Science, 09636625251364407. https://doi.org/10.1177/09636625251364407 ( preprint |  published version |  code & data)\nPfänder, J., & Altay, S. (2025). Spotting false news and doubting true news: a systematic review and meta-analysis of news judgements. Nature Human Behaviour, 1–12. https://doi.org/10.1038/s41562-024-02086-1 ( preprint |  published version |  code & data)\nPfänder, J., De Courson, B., & Mercier, H. (2025). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? Cognition, 255, 106005. https://doi.org/10.1016/j.cognition.2024.106005 ( preprint |  published version |  code & data)"
-  },
-  {
-    "objectID": "research/index.html#large-collaborations-minor-roles",
-    "href": "research/index.html#large-collaborations-minor-roles",
-    "title": "Working papers",
-    "section": "Large collaborations [minor roles]",
-    "text": "Large collaborations [minor roles]\n\nCologna, V., Mede, N. G., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., Linden, S. van der, Mercier, H., & Pfänder, J. (2025). Trust in scientists and their role in society across 68 countries. Nature Human Behaviour, 1–18. https://doi.org/10.1038/s41562-024-02090-5 ( preprint)\nMede, N. G., Cologna, V., Berger, S., Besley, J., Brick, C., Joubert, M., Maibach, E. W., Mihelj, S., Oreskes, N., Schäfer, M. S., Van Der Linden, S., Mercier, H., & Pfänder, J. (2025). Perceptions of science, science communication, and climate change attitudes in 68 countries – the TISP dataset. Scientific Data, 12(1), 114. https://doi.org/10.1038/s41597-024-04100-7 ( preprint)"
-  },
-  {
-    "objectID": "research/index.html#conference-proceedings",
-    "href": "research/index.html#conference-proceedings",
-    "title": "Working papers",
-    "section": "Conference proceedings",
-    "text": "Conference proceedings\n\nPfänder, J., Courson, B. de, & Mercier, H. (2024). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? Proceedings of the Annual Meeting of the Cognitive Science Society, 46. https://escholarship.org/uc/item/4ms2n8wd ( pdf |  code & data |  poster)"
-  },
-  {
-    "objectID": "research/index.html#section-2",
-    "href": "research/index.html#section-2",
-    "title": "Working papers",
-    "section": "2026",
-    "text": "2026\n\nPfänder, J. (2026, June). Trusting but forgetting impressive science. EASP General Meeting, Strasbourg.\nPfänder, J. (2026, June). Strengthening Trust in Climate Scientists in the US - A Megastudy Approach. EASP Small Meeting, Hohenheim.\nPfänder, J. (2026, May). Strengthening Trust in Climate Scientists in the US - A Megastudy Approach. Max Planck Institute for Human Development, Berlin.\nPfänder, J. (2026, May). Predicting the effects of a megastudy with behavioral clones. Behavioral Clones Workshop (Max Planck Institute for Human Development), Berlin."
-  },
-  {
-    "objectID": "research/index.html#section-3",
-    "href": "research/index.html#section-3",
-    "title": "Working papers",
-    "section": "2025",
-    "text": "2025\n\nPfänder, J., & Altay, S. (2025, June). Belief in & interventions against misinformation. 15th Annual Conference of the European Political Science Association, Madrid. ( slides)\nPfänder, J. (2025, May). The rational impression account of trust in science. Explaining culture: an interdisciplinary approach, Paris.\nPfänder, J., & Mercier, H. (2025, March). Trust in science. Paris School of International Affairs (Sciences Po), Paris.\nPfänder, J., & Altay, S. (2025, March). Spotting False News and Doubting True News. A Meta-Analysis of News Judgments (Keynote). Infox sur Seine, Paris."
-  },
-  {
-    "objectID": "research/index.html#section-4",
-    "href": "research/index.html#section-4",
-    "title": "Working papers",
-    "section": "2024",
-    "text": "2024\n\nPfänder, J. (2024, July). How wise is the crowd: Can we infer people are accurate and competent merely because they agree with each other? (Poster). 46th Annual Meeting of the Cognitive Science Society, Rotterdam. ( poster)\nPfänder, J. (2024, June). Processus sous-tendant la confiance dans la science. 5ème édition des Rencontres Jeunes Chercheur·euse·s, Grenoble.\nPfänder, J., & Altay, S. (2024, February). Spotting False News and Doubting True News: A Meta-Analysis of News Judgments. EDMO Scientific Conference on Disinformation, Amsterdam. ( slides)"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jan Pfänder",
@@ -168,45 +203,10 @@
     "text": "I am Jan, a postdoc at the Swiss Federal Institute of Aquatic Science and Technology (Eawag), where I work with Viktoria Cologna.\nMy main research topics are trust in science and misinformation, with a new focus on climate science. More broadly, I’m interested in how people evaluate information, and what drives people to develop and propagate explanations about the world, including science, but also conspiracy theories, religion, or political ideology.\nI hold a  PhD in cognitive sciences from the École Normale Supérieure in Paris, where I was supervised by Hugo Mercier."
   },
   {
-    "objectID": "blog/2024-09_tracked-changes/index.html",
-    "href": "blog/2024-09_tracked-changes/index.html",
-    "title": "Tracked changes for revisions",
-    "section": "",
-    "text": "During revisions, reviewers as us to make changes to your initially submitted manuscript. For reviewers to see what exactly you’ve changed in the manuscript, it is nice to have a version with tracked changes of your revised manuscript (kind of like the correction mode in Word). Luckily, there are tools available to make this very easy. I’ll quickly describe my workflow below."
-  },
-  {
-    "objectID": "blog/2024-09_tracked-changes/index.html#generating-a-manuscript-with-papaja",
-    "href": "blog/2024-09_tracked-changes/index.html#generating-a-manuscript-with-papaja",
-    "title": "Tracked changes for revisions",
-    "section": "Generating a manuscript with Papaja",
-    "text": "Generating a manuscript with Papaja\nI tend to write manuscripts in RMarkdown, using the Papaja package. Render the .Rmd file to .pdf produces a .tex version. When first submitting the manuscript to a journal, I save the this .tex file and call it something like initial_submission.tex."
-  },
-  {
-    "objectID": "blog/2024-09_tracked-changes/index.html#making-changes-requested-by-reviewers",
-    "href": "blog/2024-09_tracked-changes/index.html#making-changes-requested-by-reviewers",
-    "title": "Tracked changes for revisions",
-    "section": "Making changes requested by reviewers",
-    "text": "Making changes requested by reviewers\nAfter reviewers provided their feedback (fingers crossed it’s positive and did not lead to a rejection), I make all sort of changes to the paper, i.e. the original Rmd file. Once I’m done, I’ll render the file to .pdf again, in order to send back the revised manuscript. I’ll call the .tex file that comes along with it revised.tex."
-  },
-  {
-    "objectID": "blog/2024-09_tracked-changes/index.html#tracking-changes",
-    "href": "blog/2024-09_tracked-changes/index.html#tracking-changes",
-    "title": "Tracked changes for revisions",
-    "section": "Tracking changes",
-    "text": "Tracking changes\nIn addition to my revised manuscript, I like to send reviewers a version where all the changes are immediately visible. To do so, I use the online Latex Diff Tool. All I need to do is copy-paste the content of my initial_submission.tex and my revised.tex file in the respective boxes. The tool then generates a version that highlights the changes. All I have to do is copy-paste that version into an empty .tex file and render it to .pdf. I always use Overleaf for that."
-  },
-  {
     "objectID": "teaching/index.html",
     "href": "teaching/index.html",
     "title": "Teaching",
     "section": "",
     "text": "Epistémologie et Esprit Critique (or, Introduction to research design)\n\n\n\nresearch design\n\nstatistics\n\nsimulation\n\nR\n\nggplot\n\n\n\nA hands-on introduction to research_design for students of the Sciences Pour un Monde Durable (SMD) undergraduate program at Paris Sciences et Lettres (PSL) University\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Jan Pfänder",
-    "section": "",
-    "text": "Download current CV"
   }
 ]

@@ -9,12 +9,12 @@ pfanderGlobalStudiesTrust2026:
   preprint: https://osf.io/preprints/psyarxiv/jgcze_v2
   published: pdfs/2026_new_directions.pdf
 
-pfanderTrustingForgettingImpressive2025a:
+pfanderTrustingForgettingImpressive2025b:
   preprint: https://osf.io/preprints/osf/argq5_v2
   published: pdfs/2025_impressive.pdf
   code: https://github.com/janpfander/impressive_science
 
-pfanderQuasiuniversalAcceptanceBasic2025b:
+pfanderQuasiuniversalAcceptanceBasic2025a:
   preprint: https://osf.io/preprints/osf/qc43v_v3
   published: pdfs/2025_quasi_universal.pdf
   code: https://github.com/janpfander/everyone_trusts_science_abit
@@ -43,5 +43,6 @@ pfanderHowWiseCrowd2024:
 pfanderRationalImpressionAccount2025a:
   note: submitted
 
-pfanderFrenchTrustMore2025:
+# formerly pfanderFrenchTrustMore2025 ("French trust more..."), retitled
+pfanderSciencesPerceivedPrecise2026:
   note: submitted

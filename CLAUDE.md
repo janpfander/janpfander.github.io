@@ -1,6 +1,6 @@
-# Website context (`_context.md`)
+# Website context (`CLAUDE.md`)
 
-> Working notes for Claude Code. Filename starts with `_` so Quarto ignores it (not published). Not a rendered page.
+> Working notes for Claude Code — auto-loaded every session. Excluded from the Quarto render via `_quarto.yml` `project.render: ["!CLAUDE.md"]` (a negation-only list renders everything else by default), so it is not published as a page.
 
 ## What this is
 
@@ -81,7 +81,7 @@ Files:
 
 **Tooling:** `rendercv` installed via `pip install "rendercv[full]"` (bundles Typst). Python deps: `bibtexparser`, `ruamel.yaml`. Renders in ~1.5s, currently 3 pages.
 
-**Zotero (not set up yet):** target workflow is drag PDF into Zotero → (tag `collaboration` only if minor-role) → Better BibTeX auto-exports to root `references.bib` (enable **pinned citekeys** so `links.yaml` keys + any @cites stay stable) → rebuild. Until then `references.bib` is hand-maintained. Talks may later move to Zotero "Presentation" items; for now `talks.yaml`.
+**Zotero (LIVE since 2026-07-07):** `references.bib` is now written by a Better BibTeX auto-export ("Keep updated") from Jan's Zotero — **never hand-edit it**. Export format is **Better BibTeX** (classic `journal`/`year` fields; Better BibLaTeX would break `_build.py`). Workflow: drag PDF into Zotero (item must be in the exported collection) → tag `collaboration` only if minor-role → export fires → `make`. When a preprint is published: edit the same item (type → Journal Article, add journal+DOI), don't create a second item. Theses (`@phdthesis` etc.) are skipped by `_build.py` (belong in CV Education, not publications). Citekey hygiene: keys must be **pinned** in Zotero (right-click → Better BibTeX → Pin BibTeX key; ideally the "automatically pin after N seconds" preference) — the 2026-07 first export reshuffled two a/b suffixes because keys weren't pinned, breaking `links.yaml` matching. Export still includes `abstract`/`file` fields (BBT "Fields to omit" not configured; user OK with that). Talks may later move to Zotero "Presentation" items; for now `talks.yaml`.
 
 ## Brand color (website ↔ CV)
 
