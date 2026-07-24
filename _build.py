@@ -5,7 +5,8 @@ Single build step for the whole site's scholarly content.
 Reads the canonical data files at the repo root:
     references.bib   publications (metadata + DOI; Zotero-fed later)
     talks.yaml       every talk
-    reviews.yaml     peer-review record
+    reviews.yaml     peer-review record (snapshot; synced from the reviews
+                     repo's generated ../reviews/reviews.yaml when present)
     links.yaml       per-paper website links (preprint / code / poster / ...)
 
 and regenerates BOTH outputs so a single edit propagates everywhere:
@@ -35,10 +36,14 @@ except ModuleNotFoundError as exc:
         '    python3 -m pip install "rendercv[full]" bibtexparser ruamel.yaml\n'
     )
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent
 REFERENCES = ROOT / "references.bib"
 TALKS = ROOT / "talks.yaml"
 REVIEWS = ROOT / "reviews.yaml"
+# Authoritative per-manuscript list, generated in the reviews repo (sibling
+# checkout) by its bin/update_reviews.py. When present, it refreshes the
+# committed REVIEWS snapshot above so the site still builds without it.
+REVIEWS_SOURCE = ROOT.parent / "reviews" / "reviews.yaml"
 LINKS = ROOT / "links.yaml"
 CV_YAML = ROOT / "cv" / "cv.yaml"
 PUBS_PARTIAL = ROOT / "research" / "_publications.md"
@@ -257,11 +262,25 @@ def build_cv_presentations(talks):
 # Reviews (from reviews.yaml) -> CV "Peer Reviewing" entry
 # --------------------------------------------------------------------------- #
 
+def sync_reviews():
+    """Refresh the local reviews.yaml snapshot from the reviews repo, if present."""
+    if REVIEWS_SOURCE.exists():
+        header = ("# Snapshot of ../reviews/reviews.yaml, synced by _build.py — "
+                  "edit there, not here.\n")
+        write_if_changed(REVIEWS, header + REVIEWS_SOURCE.read_text(encoding="utf-8"))
+
+
 def inject_reviews(data):
+    sync_reviews()
     reviews = load_yaml(REVIEWS) or []
-    total = sum(int(r.get("count", 0)) for r in reviews)
-    venues = ", ".join(f"*{clean_tex(r['venue'])}* ({int(r.get('count', 0))})"
-                       for r in reviews if r.get("venue"))
+    total = len(reviews)
+    counts = {}
+    for r in reviews:
+        if r.get("venue"):
+            counts[r["venue"]] = counts.get(r["venue"], 0) + 1
+    venues = ", ".join(f"*{clean_tex(v)}* ({c})"
+                       for v, c in sorted(counts.items(),
+                                          key=lambda kv: (-kv[1], kv[0])))
     section = data.get("cv", {}).get("sections", {}).get(PROFESSIONAL_SERVICE_KEY) or []
     for entry in section:
         if isinstance(entry, dict) and entry.get("name") == PEER_REVIEW_ENTRY_NAME:

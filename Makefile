@@ -18,7 +18,7 @@ all: cv site
 cv: cv/cv.pdf
 
 # Rebuilds the PDF only when a source file is newer than it.
-cv/cv.pdf: references.bib talks.yaml reviews.yaml links.yaml cv/cv.yaml _build.py
+cv/cv.pdf: references.bib talks.yaml reviews.yaml links.yaml cv/cv.yaml _build.py $(wildcard ../reviews/reviews.yaml)
 	./cv/render.sh
 
 site:
