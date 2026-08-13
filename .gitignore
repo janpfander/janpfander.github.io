@@ -17,3 +17,6 @@
 # RenderCV build artifacts (cv/cv.pdf is the committed output)
 cv/_rendercv_output/
 **/__pycache__/
+
+# Claude Code working notes (local only, repo is public)
+CLAUDE.md
