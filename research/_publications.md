@@ -1,6 +1,5 @@
 # Working papers
 
--   @pfanderSciencesPerceivedPrecise2026 (*submitted*)
 -   @pfanderRationalImpressionAccount2025a (*submitted*)
 
 # Peer reviewed publications
@@ -8,6 +7,7 @@
 ## 2026
 
 -   @pfanderGlobalStudiesTrust2026 ([<i class="fas fa-file-pdf"></i> preprint](https://osf.io/preprints/psyarxiv/jgcze_v2) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2026_new_directions.pdf))
+-   @pfanderSciencesPerceivedPrecise2026a ([<i class="fas fa-file-pdf"></i> preprint](pdfs/2026_precise_consensual_preprint.pdf) \| [<i class="fas fa-file-pdf"></i> published version](pdfs/2026_precise_consensual.pdf))
 
 ## 2025
 
