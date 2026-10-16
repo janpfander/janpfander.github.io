@@ -1,0 +1,17 @@
+# Courses shown on the Teaching page (newest first). Fields:
+#   title, university, years (free text, e.g. "Autumn 2026" or "2022 – 2025"),
+#   url (course website, links the logo and the title), logo (image in teaching/),
+#   description (optional one-liner).
+- title: The Psychology of Climate Change Communication
+  university: ETH Zurich
+  years: Autumn 2026
+  url: https://janpfander.github.io/course_climate_communication/
+  logo: climate_communication.png
+  description: "Theoretical insights and practical applications. Co-taught with Viktoria Cologna."
+
+- title: Introduction to research design
+  university: Université PSL
+  years: 2022 – 2025
+  url: https://janpfander.github.io/course_research-design/
+  logo: research_design.png
+  description: "A hands-on introduction to research design and statistics in R for the BA program Sciences pour un monde durable."

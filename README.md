@@ -10,7 +10,7 @@ overwritten on every build.
 
 | Edit this | Updates |
 |-----------|---------|
-| `references.bib` | publications (website + CV) |
+| Zotero (writes `references.bib`) | publications (website + CV) |
 | `talks.yaml` | talks (website + CV) |
 | `reviews.yaml` | peer-review list + count (CV) |
 | `links.yaml` | per-paper links on the website (preprint / code / poster …) |
@@ -18,11 +18,32 @@ overwritten on every build.
 
 ## How to add things
 
-**A paper** → add a BibTeX entry to `references.bib`.
-Grouping is automatic: no journal = "working paper"; has a journal = "peer-reviewed";
-proceedings = "conference". Add `keywords = {collaboration}` for big group papers
-where you're a minor author. To show preprint/code/poster links on the website, add
-an entry in `links.yaml` under the paper's citation key.
+**A paper** → everything starts in Zotero. `references.bib` is written by the
+Better BibTeX auto-export, so never edit it by hand.
+
+1. Add the paper to Zotero, in the collection that auto-exports. The export
+   fires on its own and rewrites `references.bib`.
+2. Pin the citation key: right-click the item → Better BibTeX → Pin BibTeX key.
+   A pinned key never changes, and `links.yaml` matches papers by that key.
+3. If it's a big group paper where you're a minor author, add the Zotero tag
+   `collaboration`.
+4. Optional website links: add an entry in `links.yaml` under the paper's
+   citation key (fields: `preprint`, `published`, `pdf`, `code`, `poster`,
+   `slides`, or `note` for a status like "submitted"). Local PDFs go in
+   `research/pdfs/`, named `YEAR_short_title.pdf` for the published version and
+   `YEAR_short_title_preprint.pdf` for a preprint copy. Paths in `links.yaml`
+   are relative to `research/` (e.g. `pdfs/2026_precise_consensual.pdf`).
+5. Run `make`, check the result, then commit and push.
+
+Grouping on the website and CV is automatic: an entry with a journal counts as
+peer-reviewed, proceedings count as conference papers, and an entry with no
+venue counts as a working paper.
+
+**When a preprint gets published** → edit the *same* Zotero item: change the
+type to Journal Article and fill in the journal and DOI. Creating a second item
+makes the paper appear twice (once as a working paper, once as published). Then
+update the paper's entry in `links.yaml` (add the `published` link, drop the
+`note`) and run `make`.
 
 **A talk** → add a block to `talks.yaml` (set `type: invited` or `type: conference`).
 
@@ -54,7 +75,8 @@ make clean     # delete build output
 ## Structure
 
 ```
-references.bib, talks.yaml, reviews.yaml, links.yaml   ← your data (edit these)
+references.bib       ← publications, written by the Zotero auto-export (hands off)
+talks.yaml, reviews.yaml, links.yaml   ← your data (edit these)
 Makefile             ← the build commands (make, make cv, make site …)
 _build.py            ← generator: turns the data into website + CV content
 index.qmd            ← home page

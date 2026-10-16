@@ -30,6 +30,7 @@ toc: false
 
 I am Jan, a postdoc at the Swiss Federal Institute of Aquatic Science and Technology (Eawag),
 where I work with [Viktoria Cologna](https://scholar.google.com/citations?user=e138rTwAAAAJ&hl=en).
+I also teach a course on [the psychology of climate change communication](https://janpfander.github.io/course_climate_communication/) at ETH Zurich.
 
 My main research topics are trust in science and misinformation, with a new focus on climate science. More broadly, I'm interested in how people evaluate information, and what drives people to develop and propagate explanations about the world, including science, but also conspiracy theories, religion, or political ideology.
 

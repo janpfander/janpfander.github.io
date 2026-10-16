@@ -24,11 +24,15 @@ cv:
       - "Advisor: Viktoria Cologna"
       date: Sep 2025 – present
       position: Postdoctoral researcher
+    - company: ETH Zurich
+      location: Zurich, Switzerland
+      date: Sep 2026 – present
+      position: Lecturer
     - company: Cambridge University
       location: Cambridge, UK
       highlights:
       - "Host: Sander van der Linden"
-      date: Mai 2026 – Jun 2026
+      date: May 2026 – Jun 2026
       position: Visiting Researcher
     education:
     - institution: École Normale Supérieure (ENS-PSL), Institut Jean Nicod
@@ -134,6 +138,7 @@ cv:
       - H. Mercier
       journal: Proceedings of the Annual Meeting of the Cognitive Science Society
       date: 2024
+      url: https://escholarship.org/uc/item/4ms2n8wd
     - title: Large collaborations (minor role)
       authors:
       - (*n* = 3)
@@ -172,13 +177,22 @@ cv:
       doi: https://doi.org/10.1038/s41597-024-04100-7
     - title: Working papers
       authors:
-      - (*n* = 1)
+      - (*n* = 2)
+    - title: '[Preregistration] Megastudy Testing 20 Information Interventions to Strengthen Trust in Climate Scientists in the US'
+      authors:
+      - '**J. Pfänder**'
+      date: 2026
+      doi: https://doi.org/10.5281/zenodo.20160212
     - title: The Rational Impression Account of Trust in Science
       authors:
       - '**J. Pfänder**'
       - H. Mercier
       date: 2025
       doi: https://doi.org/10.31234/osf.io/nwka2_v1
+    grants:
+    - name: Swiss National Science Foundation (SNSF) exchange grant
+      summary: "Research visit to Cambridge University (host: Sander van der Linden), 5'000 CHF"
+      date: "2026"
     presentations:
     - name: Invited talks
     - name: Strengthening Trust in Climate Scientists in the US - A Megastudy Approach
@@ -188,6 +202,12 @@ cv:
       summary: Paris School of International Affairs (Sciences Po), Paris
       date: 2025
     - name: Conference presentations
+    - name: How different demographic groups respond to interventions aimed at increasing trust in climate scientists
+      summary: 54th DGPs Congress (German Psychological Society), Luxembourg
+      date: 2026
+    - name: Alienation and Trust in Climate Scientists in the United States
+      summary: "Workshop 'Knowing how to know in a complex world: Philosophical and empirical perspectives' (LMU Munich), Munich"
+      date: 2026
     - name: Trusting but forgetting impressive science
       summary: EASP General Meeting, Strasbourg
       date: 2026
@@ -217,11 +237,16 @@ cv:
       date: 2024
     teaching:
     - name: Courses
-    - name: Fact-Checking and Critical Thinking
-      summary: Université PSL (Paris Sciences & Lettres) — BA program "Sciences pour un monde durable"
+    - name: "The Psychology of Climate Change Communication: theoretical insights and practical applications [[website](https://janpfander.github.io/course_climate_communication/)]"
+      summary: ETH Zurich
+      date: "2026"
+      highlights:
+      - Co-taught with Viktoria Cologna
+      - 24.5h in-class per semester (14 weekly sessions)
+    - name: "Introduction to Research Design [[website](https://janpfander.github.io/course_research-design/)]"
+      summary: Université PSL (Paris Sciences & Lettres)
       date: "2022 – 2025"
       highlights:
-      - A hands-on introduction to research design for an interdisciplinary BA program
       - Sole instructor & creator of the course
       - 30h in-class per semester; one semester a year
     - name: Workshops

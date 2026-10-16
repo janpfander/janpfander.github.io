@@ -32,3 +32,44 @@ h1, h2, h3, h4, h5, h6 {
 pre, code {
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* Teaching page: custom listing (teaching/_listing.ejs), modelled on andrewheiss.com/teaching */
+.teaching .course-entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1.5em;
+  margin-bottom: 2.5em;
+  line-height: 1.3;
+}
+.teaching .course-entry .logo {
+  flex: 0 0 120px;
+}
+.teaching .course-entry .logo img {
+  width: 100%;
+}
+.teaching .course-entry p {
+  margin-bottom: 0.3em;
+}
+.teaching .course-title {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+.teaching .course-title a {
+  color: #7e56c2;
+  text-decoration: none;
+}
+.teaching .course-title a:hover {
+  text-decoration: underline;
+}
+.teaching .course-details {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+.teaching .course-description {
+  font-size: 0.95em;
+}
+@media (max-width: 575px) {
+  .teaching .course-entry { column-gap: 1em; }
+  .teaching .course-entry .logo { flex-basis: 80px; }
+}

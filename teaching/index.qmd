@@ -1,20 +1,18 @@
 ---
 title: "Teaching"
-subtitle: "Open source course materials (with a lot of inspiration and help from other educators)" 
+subtitle: "Open source course materials (with a lot of inspiration and help from other educators)"
+# Courses live in courses.yml; _listing.ejs renders them (modelled on
+# andrewheiss.com/teaching). Add a course = add an entry to courses.yml
+# plus its logo image in this folder.
 listing:
-  contents: . #current folder
-  feed: true
-  sort: "date desc"
-  type: grid
-  grid-item-border: true
-  grid-item-align: left
-  max-description-length: 175
-  date-format: medium
-  categories: numbered
-  sort-ui: false
-  filter-ui: false
+  id: courses
+  contents: courses.yml
+  sort: false
+  template: _listing.ejs
 page-layout: full
 title-block-banner: "#7e56c2"
 title-block-banner-color: white
 ---
 
+::: {#courses}
+:::

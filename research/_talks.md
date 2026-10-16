@@ -2,6 +2,8 @@
 
 ## 2026
 
+-   Pfänder, J. (2026, September). *How different demographic groups respond to interventions aimed at increasing trust in climate scientists*. 54th DGPs Congress (German Psychological Society), Luxembourg.
+-   Pfänder, J., Constantino, S., Mercier, H., Vlasceanu, M., & Cologna, V. (2026, September). *Alienation and Trust in Climate Scientists in the United States*. Workshop 'Knowing how to know in a complex world: Philosophical and empirical perspectives' (LMU Munich), Munich.
 -   Pfänder, J. (2026, June). *Trusting but forgetting impressive science*. EASP General Meeting, Strasbourg.
 -   Pfänder, J. (2026, June). *Strengthening Trust in Climate Scientists in the US - A Megastudy Approach*. EASP Small Meeting, Hohenheim.
 -   Pfänder, J. (2026, May). *Strengthening Trust in Climate Scientists in the US - A Megastudy Approach*. Max Planck Institute for Human Development, Berlin.

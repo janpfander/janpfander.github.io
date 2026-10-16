@@ -75,20 +75,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-courses .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-university','listing-years','listing-url','listing-logo','listing-description',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-university","listing-years","listing-url","listing-logo","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-courses'] = new List('listing-courses', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -211,14 +211,14 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-page">
       <h1 class="title">Teaching</h1>
             <p class="subtitle lead">Open source course materials (with a lot of inspiration and help from other educators)</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page">
 
       
     
@@ -229,58 +229,51 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2dwbG90">ggplot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzZWFyY2glMjBkZXNpZ24=">research design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3RhdGlzdGljcw==">statistics <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
+<div id="listing-courses" class="quarto-listing quarto-listing-container-custom">
+<div class="teaching">
 
+  <div class="course-entry">
+    <div class="logo">
+      <a href="https://janpfander.github.io/course_climate_communication/" target="_blank"><img src="climate_communication.png" alt="The Psychology of Climate Change Communication" title="The Psychology of Climate Change Communication"></a>
+    </div>
+    <div class="body">
+      <p class="course-title"><a href="https://janpfander.github.io/course_climate_communication/" target="_blank">The Psychology of Climate Change Communication</a></p>
+      <p class="course-details"><span class="course-university">ETH Zurich</span> · <span class="course-years">Autumn 2026</span></p>
+      
+      <p class="course-description">Theoretical insights and practical applications. Co-taught with Viktoria Cologna.</p>
+      
+    </div>
+  </div>
 
+  <div class="course-entry">
+    <div class="logo">
+      <a href="https://janpfander.github.io/course_research-design/" target="_blank"><img src="research_design.png" alt="Introduction to research design" title="Introduction to research design"></a>
+    </div>
+    <div class="body">
+      <p class="course-title"><a href="https://janpfander.github.io/course_research-design/" target="_blank">Introduction to research design</a></p>
+      <p class="course-details"><span class="course-university">Université PSL</span> · <span class="course-years">2022 – 2025</span></p>
+      
+      <p class="course-description">A hands-on introduction to research design and statistics in R for the BA program Sciences pour un monde durable.</p>
+      
+    </div>
+  </div>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="cmVzZWFyY2glMjBkZXNpZ24lMkNzdGF0aXN0aWNzJTJDc2ltdWxhdGlvbiUyQ1IlMkNnZ3Bsb3Q=" data-listing-file-modified-sort="1744633037000" data-listing-reading-time-sort="1" data-listing-word-count-sort="179">
-<a href="../teaching/research_design/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../teaching/research_design/hex_sticker.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Epistémologie et Esprit Critique (or, Introduction to research design)
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzZWFyY2glMjBkZXNpZ24='); return false;">research design</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90'); return false;">ggplot</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>A hands-on introduction to <code>research_design</code> for students of the Sciences Pour un Monde Durable (SMD) undergraduate program at Paris Sciences et Lettres (PSL) University</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -1,0 +1,18 @@
+```{=html}
+<div class="teaching">
+<% for (const course of items) { %>
+  <div class="course-entry">
+    <div class="logo">
+      <a href="<%= course.url %>" target="_blank"><img src="<%= course.logo %>" alt="<%= course.title %>" title="<%= course.title %>" /></a>
+    </div>
+    <div class="body">
+      <p class="course-title"><a href="<%= course.url %>" target="_blank"><%= course.title %></a></p>
+      <p class="course-details"><span class="course-university"><%= course.university %></span> · <span class="course-years"><%= course.years %></span></p>
+      <% if (course.description) { %>
+      <p class="course-description"><%= course.description %></p>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```
