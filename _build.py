@@ -207,19 +207,22 @@ def build_cv_publications(groups):
             continue
         publications.append({"title": title, "authors": [f"(*n* = {len(group)})"]})
         for entry in group:
+            # The title itself is the link (DOI, else URL). RenderCV's own `doi`
+            # field is not used: it would print the DOI as a separate line and
+            # prefixes https://doi.org/ itself.
             doi = entry.get("doi", "").strip()
-            if doi and not doi.startswith("http"):
-                doi = f"https://doi.org/{doi}"
+            if doi.startswith("http"):
+                doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi)
+            link = f"https://doi.org/{doi}" if doi else entry.get("url", "").strip()
+            title = clean_tex(entry.get("title", ""))
+            if link:
+                title = f"[{title.replace('[', r'\[').replace(']', r'\]')}]({link})"
             venue = clean_tex(entry.get("journal") or entry.get("booktitle") or "")
-            pub = {"title": clean_tex(entry.get("title", "")), "authors": format_authors(entry)}
+            pub = {"title": title, "authors": format_authors(entry)}
             if venue:
                 pub["journal"] = venue
             if year_as_int(entry.get("year")):
                 pub["date"] = year_as_int(entry["year"])
-            if doi:
-                pub["doi"] = doi
-            elif entry.get("url"):
-                pub["url"] = entry["url"].strip()
             publications.append(pub)
     return publications
 

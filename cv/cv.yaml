@@ -82,67 +82,60 @@ cv:
     - title: Peer-reviewed publications
       authors:
       - (*n* = 6)
-    - title: Global Studies on Trust in Science Suggest New Theoretical and Methodological Directions
+    - title: '[Global Studies on Trust in Science Suggest New Theoretical and Methodological Directions](https://doi.org/10.1016/j.copsyc.2025.102215)'
       authors:
       - '**J. Pfänder**'
       - N. G. Mede
       - V. Cologna
       journal: Current Opinion in Psychology
       date: 2026
-      doi: https://doi.org/10.1016/j.copsyc.2025.102215
-    - title: Sciences Perceived as Precise and Consensual Are More Trusted
+    - title: '[Sciences Perceived as Precise and Consensual Are More Trusted](https://doi.org/10.1177/09636625261471051)'
       authors:
       - '**J. Pfänder**'
       - H. Mercier
       journal: Public Understanding of Science
       date: 2026
-      doi: https://doi.org/10.1177/09636625261471051
-    - title: 'How Wise Is the Crowd: Can We Infer People Are Accurate and Competent Merely Because They Agree with Each Other?'
+    - title: '[How Wise Is the Crowd: Can We Infer People Are Accurate and Competent Merely Because They Agree with Each Other?](https://doi.org/10.1016/j.cognition.2024.106005)'
       authors:
       - '**J. Pfänder**'
       - B. de Courson
       - H. Mercier
       journal: Cognition
       date: 2025
-      doi: https://doi.org/10.1016/j.cognition.2024.106005
-    - title: Quasi-Universal Acceptance of Basic Science in the United States
+    - title: '[Quasi-Universal Acceptance of Basic Science in the United States](https://doi.org/10.1177/09636625251364407)'
       authors:
       - '**J. Pfänder**'
       - L. Kerzreho
       - H. Mercier
       journal: Public Understanding of Science
       date: 2025
-      doi: https://doi.org/10.1177/09636625251364407
-    - title: 'Spotting False News and Doubting True News: A Systematic Review and Meta-Analysis of News Judgements'
+    - title: '[Spotting False News and Doubting True News: A Systematic Review and Meta-Analysis of News Judgements](https://doi.org/10.1038/s41562-024-02086-1)'
       authors:
       - '**J. Pfänder**'
       - S. Altay
       journal: Nature Human Behaviour
       date: 2025
-      doi: https://doi.org/10.1038/s41562-024-02086-1
-    - title: Trusting But Forgetting Impressive Science
+    - title: '[Trusting But Forgetting Impressive Science](https://doi.org/10.1163/15685373-12340227)'
       authors:
       - '**J. Pfänder**'
       - S. de Rouilhan
       - H. Mercier
       journal: Journal of Cognition and Culture
       date: 2025
-      doi: https://doi.org/10.1163/15685373-12340227
     - title: Conference proceedings
       authors:
       - (*n* = 1)
-    - title: 'How Wise Is the Crowd: Can We Infer People Are Accurate and Competent Merely Because They Agree with Each Other?'
+    - title: '[How Wise Is the Crowd: Can We Infer People Are Accurate and Competent Merely Because They Agree with Each Other?](https://escholarship.org/uc/item/4ms2n8wd)'
       authors:
       - '**J. Pfänder**'
       - B. de Courson
       - H. Mercier
       journal: Proceedings of the Annual Meeting of the Cognitive Science Society
       date: 2024
-      url: https://escholarship.org/uc/item/4ms2n8wd
     - title: Large collaborations (minor role)
       authors:
       - (*n* = 3)
-    - title: Investigating the Analytical Robustness of the Social and Behavioural Sciences
+    - title: '[Investigating the Analytical Robustness of the Social and Behavioural Sciences](https://doi.org/10.1038/s41586-025-09844-9)'
       authors:
       - B. Aczel
       - B. Szaszi
@@ -152,8 +145,7 @@ cv:
       - '... et al.'
       journal: Nature
       date: 2026
-      doi: https://doi.org/10.1038/s41586-025-09844-9
-    - title: Trust in Scientists and Their Role in Society across 68 Countries
+    - title: '[Trust in Scientists and Their Role in Society across 68 Countries](https://doi.org/10.1038/s41562-024-02090-5)'
       authors:
       - V. Cologna
       - N. G. Mede
@@ -163,8 +155,7 @@ cv:
       - '... et al.'
       journal: Nature Human Behaviour
       date: 2025
-      doi: https://doi.org/10.1038/s41562-024-02090-5
-    - title: Perceptions of Science, Science Communication, and Climate Change Attitudes in 68 Countries -- the TISP Dataset
+    - title: '[Perceptions of Science, Science Communication, and Climate Change Attitudes in 68 Countries -- the TISP Dataset](https://doi.org/10.1038/s41597-024-04100-7)'
       authors:
       - N. G. Mede
       - V. Cologna
@@ -174,21 +165,18 @@ cv:
       - '... et al.'
       journal: Scientific Data
       date: 2025
-      doi: https://doi.org/10.1038/s41597-024-04100-7
     - title: Working papers
       authors:
       - (*n* = 2)
-    - title: '[Preregistration] Megastudy Testing 20 Information Interventions to Strengthen Trust in Climate Scientists in the US'
+    - title: '[\[Preregistration\] Megastudy Testing 20 Information Interventions to Strengthen Trust in Climate Scientists in the US](https://doi.org/10.5281/zenodo.20160212)'
       authors:
       - '**J. Pfänder**'
       date: 2026
-      doi: https://doi.org/10.5281/zenodo.20160212
-    - title: The Rational Impression Account of Trust in Science
+    - title: '[The Rational Impression Account of Trust in Science](https://doi.org/10.31234/osf.io/nwka2_v1)'
       authors:
       - '**J. Pfänder**'
       - H. Mercier
       date: 2025
-      doi: https://doi.org/10.31234/osf.io/nwka2_v1
     grants:
     - name: Swiss National Science Foundation (SNSF) exchange grant
       summary: "Research visit to Cambridge University (host: Sander van der Linden), 5'000 CHF"
@@ -295,6 +283,11 @@ design:
         SUMMARY
 
         HIGHLIGHTS
+    publication_entry:
+      main_column: |-
+        TITLE
+        AUTHORS
+        *JOURNAL*
   page:
     size: us-letter
     top_margin: 0.6in
@@ -340,7 +333,7 @@ design:
       section_titles: true
   links:
     underline: false
-    show_external_link_icon: true
+    show_external_link_icon: false
   header:
     alignment: center
     photo_width: 3.5cm
