@@ -170,6 +170,12 @@ def format_authors(entry):
     return formatted
 
 
+def is_preregistration(entry):
+    title = clean_tex(entry.get("title", "")).strip().lower()
+    keywords = clean_tex(entry.get("keywords", "")).lower()
+    return title.startswith("[preregistration]") or "preregistration" in keywords
+
+
 def load_entries():
     parser = BibTexParser(common_strings=True)
     parser.customization = convert_to_unicode
@@ -183,6 +189,10 @@ def load_entries():
         # Theses live in Zotero alongside the papers but belong in the CV's
         # Education section, not under publications/working papers.
         if entry.get("ENTRYTYPE", "").lower() in ("phdthesis", "mastersthesis", "thesis"):
+            continue
+        # Preregistrations (Zenodo/OSF records titled "[Preregistration] ..."
+        # or tagged `preregistration` in Zotero) are not publications.
+        if is_preregistration(entry):
             continue
         seen.add(key)
         entry["_order"] = i

@@ -1,6 +1,5 @@
 # Working papers
 
--   @pfanderPreregistrationMegastudyTesting2026
 -   @pfanderRationalImpressionAccount2025a (*submitted*)
 
 # Peer reviewed publications

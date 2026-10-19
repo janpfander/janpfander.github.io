@@ -167,11 +167,7 @@ cv:
       date: 2025
     - title: Working papers
       authors:
-      - (*n* = 2)
-    - title: '[\[Preregistration\] Megastudy Testing 20 Information Interventions to Strengthen Trust in Climate Scientists in the US](https://doi.org/10.5281/zenodo.20160212)'
-      authors:
-      - '**J. Pfänder**'
-      date: 2026
+      - (*n* = 1)
     - title: '[The Rational Impression Account of Trust in Science](https://doi.org/10.31234/osf.io/nwka2_v1)'
       authors:
       - '**J. Pfänder**'
