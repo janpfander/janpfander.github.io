@@ -270,6 +270,20 @@ window.Quarto = {
 
 
 </main> <!-- /main -->
+<script>
+// Quarto's link-external-newwindow skips navbar links (.nav-link); open the
+// external ones (GitHub, Bluesky) in a new tab too.
+window.document.addEventListener("DOMContentLoaded", function () {
+  var internal = /^https?:\/\/janpfander[.]github[.]io\/(?:(?:research|cv|teaching)\/|index[.]html|[#?]|$)/;
+  var local = /^https?:\/\/localhost:?[0-9]*\//;
+  window.document.querySelectorAll(".navbar a.nav-link[href^='http']").forEach(function (a) {
+    if (!internal.test(a.href) && !local.test(a.href)) {
+      a.setAttribute("target", "_blank");
+      if (a.getAttribute("rel") === null) a.setAttribute("rel", "noopener");
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -343,7 +357,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("^https?://janpfander[.]github[.]io/(?:(?:research|cv|teaching)/|index[.]html|[#?]|$)");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -357,6 +371,11 @@ window.Quarto = {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

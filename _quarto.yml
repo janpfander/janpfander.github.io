@@ -56,6 +56,11 @@ format:
     css: styles.css
     toc: true
     page-layout: full
+    link-external-newwindow: true
+    # Only this site's own pages count as internal. Without the filter Quarto uses
+    # the host, so links to other janpfander.github.io project sites would stay in-tab.
+    link-external-filter: '^https?://janpfander[.]github[.]io/(?:(?:research|cv|teaching)/|index[.]html|[#?]|$)'
+    include-after-body: _external_nav_links.html
     #mainfont: monospace
 
 editor: visual

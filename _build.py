@@ -343,19 +343,28 @@ def md_inline_to_html(text):
     return re.sub(r"\*(.+?)\*", r"<em>\1</em>", text)
 
 
+def html_anchor(url, inner):
+    """<a> tag; external (http/https) links open in a new tab, matching
+    Quarto's `link-external-newwindow` which only covers Markdown links."""
+    attrs = f'href="{html.escape(url)}"'
+    if url.startswith(("http://", "https://")):
+        attrs += ' target="_blank" rel="noopener"'
+    return f"<a {attrs}>{inner}</a>"
+
+
 def website_publication(entry, link_data):
     """One paper as a raw HTML block, laid out like the CV (title as link,
     authors, italic venue) plus the website-only icon links from links.yaml."""
     f = publication_fields(entry)
     title = html.escape(f["title"], quote=False)
     if f["link"]:
-        title = f'<a href="{html.escape(f["link"])}">{title}</a>'
+        title = html_anchor(f["link"], title)
     lines = [f'<div class="pub-title">{title}</div>']
     if f["authors"]:
         lines.append(f'<div class="pub-authors">{md_inline_to_html(", ".join(f["authors"]))}</div>')
     if f["venue"]:
         lines.append(f'<div class="pub-venue"><em>{html.escape(f["venue"], quote=False)}</em></div>')
-    parts = [f'<a href="{html.escape(url)}"><i class="{icon}"></i> {label}</a>'
+    parts = [html_anchor(url, f'<i class="{icon}"></i> {label}')
              for field, icon, label in LINK_FIELDS
              if (url := (link_data or {}).get(field))]
     note = (link_data or {}).get("note")

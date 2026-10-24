@@ -1,0 +1,14 @@
+<script>
+// Quarto's link-external-newwindow skips navbar links (.nav-link); open the
+// external ones (GitHub, Bluesky) in a new tab too.
+window.document.addEventListener("DOMContentLoaded", function () {
+  var internal = /^https?:\/\/janpfander[.]github[.]io\/(?:(?:research|cv|teaching)\/|index[.]html|[#?]|$)/;
+  var local = /^https?:\/\/localhost:?[0-9]*\//;
+  window.document.querySelectorAll(".navbar a.nav-link[href^='http']").forEach(function (a) {
+    if (!internal.test(a.href) && !local.test(a.href)) {
+      a.setAttribute("target", "_blank");
+      if (a.getAttribute("rel") === null) a.setAttribute("rel", "noopener");
+    }
+  });
+});
+</script>
