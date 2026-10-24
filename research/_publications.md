@@ -26,7 +26,7 @@
 <div class="pub-title"><a href="https://doi.org/10.1177/09636625261471051">Sciences Perceived as Precise and Consensual Are More Trusted</a></div>
 <div class="pub-authors"><strong>J. Pfänder</strong>, H. Mercier</div>
 <div class="pub-venue"><em>Public Understanding of Science</em></div>
-<div class="pub-links"><a href="pdfs/2026_precise_consensual_preprint.pdf"><i class="fas fa-file-pdf"></i> preprint</a> | <a href="pdfs/2026_precise_consensual.pdf"><i class="fas fa-file-pdf"></i> published version</a></div>
+<div class="pub-links"><a href="pdfs/2026_precise_consensual_preprint.pdf"><i class="fas fa-file-pdf"></i> preprint</a> | <a href="pdfs/2026_precise_consensual.pdf"><i class="fas fa-file-pdf"></i> published version</a> | <a href="https://github.com/janpfander/trust_science_france"><i class="fab fa-github"></i> code & data</a></div>
 </div>
 ```
 
