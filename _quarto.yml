@@ -6,6 +6,10 @@ project:
     - "**/*.md"
     - "!CLAUDE.md"
     - "!README.md"
+    # Blog hidden from the rendered site since 2026-10-24 (thin + outdated);
+    # files stay tracked. To bring it back: drop these two lines + re-add the navbar item.
+    - "!blog.qmd"
+    - "!blog/**"
 
 freeze: auto
 
@@ -24,8 +28,6 @@ website:
         href: research/index.qmd
       - text: "Teaching"
         href: teaching/index.qmd
-      - text: "Blog"
-        href: blog.qmd  
       - text: "CV"
         href: cv/index.qmd
         

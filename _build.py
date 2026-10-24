@@ -11,7 +11,7 @@ Reads the canonical data files at the repo root:
 
 and regenerates BOTH outputs so a single edit propagates everywhere:
     cv/cv.yaml                 -> publications, presentations, "Peer Reviewing"
-    research/_publications.md  -> website publications (Quarto @cite + CSL)
+    research/_publications.md  -> website publications (HTML blocks, CV layout + icon links)
     research/_talks.md         -> website talks
 
 Run via `make` (or `make cv` / `make site`); also invoked by cv/render.sh.
@@ -19,6 +19,7 @@ Can be run directly: `python3 _build.py`.
 """
 
 import calendar
+import html
 import re
 import sys
 from io import StringIO
@@ -209,6 +210,21 @@ def grouped_entries(entries):
     return groups
 
 
+def publication_fields(entry):
+    """Title / link / authors / venue / year shared by the CV and the website,
+    so both show the same thing (initials, own name bolded, DOI as the link)."""
+    doi = entry.get("doi", "").strip()
+    if doi.startswith("http"):
+        doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi)
+    return {
+        "title": clean_tex(entry.get("title", "")),
+        "link": f"https://doi.org/{doi}" if doi else entry.get("url", "").strip(),
+        "authors": format_authors(entry),
+        "venue": clean_tex(entry.get("journal") or entry.get("booktitle") or ""),
+        "year": year_as_int(entry.get("year")),
+    }
+
+
 def build_cv_publications(groups):
     publications = []
     for title, key in SECTION_ORDER:
@@ -217,22 +233,18 @@ def build_cv_publications(groups):
             continue
         publications.append({"title": title, "authors": [f"(*n* = {len(group)})"]})
         for entry in group:
+            f = publication_fields(entry)
             # The title itself is the link (DOI, else URL). RenderCV's own `doi`
             # field is not used: it would print the DOI as a separate line and
             # prefixes https://doi.org/ itself.
-            doi = entry.get("doi", "").strip()
-            if doi.startswith("http"):
-                doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi)
-            link = f"https://doi.org/{doi}" if doi else entry.get("url", "").strip()
-            title = clean_tex(entry.get("title", ""))
-            if link:
-                title = f"[{title.replace('[', r'\[').replace(']', r'\]')}]({link})"
-            venue = clean_tex(entry.get("journal") or entry.get("booktitle") or "")
-            pub = {"title": title, "authors": format_authors(entry)}
-            if venue:
-                pub["journal"] = venue
-            if year_as_int(entry.get("year")):
-                pub["date"] = year_as_int(entry["year"])
+            title = f["title"]
+            if f["link"]:
+                title = f"[{title.replace('[', r'\[').replace(']', r'\]')}]({f['link']})"
+            pub = {"title": title, "authors": f["authors"]}
+            if f["venue"]:
+                pub["journal"] = f["venue"]
+            if f["year"]:
+                pub["date"] = f["year"]
             publications.append(pub)
     return publications
 
@@ -324,13 +336,45 @@ def links_suffix(link_data):
     return f" ({LINK_SEP.join(parts)})" if parts else ""
 
 
+def md_inline_to_html(text):
+    """The few markdown bits the generator itself produces: **bold**, *italic*."""
+    text = html.escape(text, quote=False)
+    text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+    return re.sub(r"\*(.+?)\*", r"<em>\1</em>", text)
+
+
+def website_publication(entry, link_data):
+    """One paper as a raw HTML block, laid out like the CV (title as link,
+    authors, italic venue) plus the website-only icon links from links.yaml."""
+    f = publication_fields(entry)
+    title = html.escape(f["title"], quote=False)
+    if f["link"]:
+        title = f'<a href="{html.escape(f["link"])}">{title}</a>'
+    lines = [f'<div class="pub-title">{title}</div>']
+    if f["authors"]:
+        lines.append(f'<div class="pub-authors">{md_inline_to_html(", ".join(f["authors"]))}</div>')
+    if f["venue"]:
+        lines.append(f'<div class="pub-venue"><em>{html.escape(f["venue"], quote=False)}</em></div>')
+    parts = [f'<a href="{html.escape(url)}"><i class="{icon}"></i> {label}</a>'
+             for field, icon, label in LINK_FIELDS
+             if (url := (link_data or {}).get(field))]
+    note = (link_data or {}).get("note")
+    if note:
+        parts.append(f"<em>{html.escape(note, quote=False)}</em>")
+    if parts:
+        lines.append(f'<div class="pub-links">{" | ".join(parts)}</div>')
+    body = "\n".join(lines)
+    return f"```{{=html}}\n<div class=\"pub\">\n{body}\n</div>\n```\n"
+
+
 def write_website_publications(groups, links):
+    def block(entries):
+        return [website_publication(e, links.get(e["ID"])) for e in entries]
+
     out = []
     if groups["working"]:
         out.append("# Working papers\n")
-        for e in groups["working"]:
-            out.append(f"-   @{e['ID']}{links_suffix(links.get(e['ID']))}")
-        out.append("")
+        out += block(groups["working"])
 
     if groups["peer-reviewed"] or groups["collaboration"] or groups["conference"]:
         out.append("# Peer reviewed publications\n")
@@ -340,21 +384,15 @@ def write_website_publications(groups, links):
             by_year.setdefault(year_as_int(e.get("year")), []).append(e)
         for year in sorted(by_year, reverse=True):
             out.append(f"## {year}\n")
-            for e in by_year[year]:
-                out.append(f"-   @{e['ID']}{links_suffix(links.get(e['ID']))}")
-            out.append("")
+            out += block(by_year[year])
 
         if groups["collaboration"]:
             out.append("## Large collaborations [minor roles]\n")
-            for e in groups["collaboration"]:
-                out.append(f"-   @{e['ID']}{links_suffix(links.get(e['ID']))}")
-            out.append("")
+            out += block(groups["collaboration"])
 
         if groups["conference"]:
             out.append("## Conference proceedings\n")
-            for e in groups["conference"]:
-                out.append(f"-   @{e['ID']}{links_suffix(links.get(e['ID']))}")
-            out.append("")
+            out += block(groups["conference"])
 
     write_if_changed(PUBS_PARTIAL, "\n".join(out).rstrip() + "\n")
 
