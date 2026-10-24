@@ -36,23 +36,23 @@ cv:
       position: Visiting Researcher
     education:
     - institution: École Normale Supérieure (ENS-PSL), Institut Jean Nicod
-      area: Psychology
+      area: Cognitive Sciences
       degree: PhD
       location: Paris, France
       start_date: 2022
       end_date: 2025
       highlights:
+      - "Thesis: A cognitive perspective on trust in science"
       - "Supervisors: Hugo Mercier & Kevin Arceneaux"
-      - "Thesis: Essays on Understanding Trust in Science"
     - institution: École Normale Supérieure (ENS-PSL)
-      area: Cognitive Science
+      area: Cognitive Sciences
       degree: MA
       location: Paris, France
       start_date: 2020
       end_date: 2022
       highlights:
-      - "Supervisor: Hugo Mercier"
       - "Thesis: Can we infer people are accurate and competent merely because they agree with each other?"
+      - "Supervisor: Hugo Mercier"
     - institution: Universität Freiburg
       area: Journalism (1st year)
       degree: MA
